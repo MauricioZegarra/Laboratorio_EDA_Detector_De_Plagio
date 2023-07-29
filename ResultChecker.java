@@ -38,5 +38,31 @@ public class ResultChecker {
             return panel;
         }
 
+         // Crear una matriz para almacenar los datos de la tabla
+         Object[][] tableData = new Object[result.length][2];
+
+         // Llenar la matriz con los datos de los arreglos result y type
+         for (int i = 0; i < result.length; i++) {
+             tableData[i][0] = result[i];
+             tableData[i][1] = type[i];
+         }
+ 
+         // Etiquetas para las columnas de la tabla
+         String[] columnNames = {"Result", "Type"};
+ 
+         // Crear el modelo de tabla con los datos y etiquetas de columna
+         DefaultTableModel tableModel = new DefaultTableModel(tableData, columnNames);
+ 
+         // Crear la tabla con el modelo
+         JTable table = new JTable(tableModel);
+ 
+         // Agregar la tabla a un JScrollPane para que sea desplazable si tiene muchos datos
+         JScrollPane scrollPane = new JScrollPane(table);
+ 
+         // Agregar el JScrollPane al panel
+         panel.add(scrollPane);
+ 
+         return panel;
+
     }
 }
