@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class ResultChecker {
     boolean[] result;
@@ -28,5 +29,14 @@ public class ResultChecker {
 
     public JPanel getResults() {
         //ventana con los resultados de la última comparación.
+        JPanel panel = new JPanel();
+
+        // Comprobar si hay resultados para mostrar
+        if (result == null || type == null || result.length == 0 || type.length == 0 || result.length != type.length) {
+            JLabel noResultsLabel = new JLabel("No hay resultados por mostar.");
+            panel.add(noResultsLabel);
+            return panel;
+        }
+
     }
 }
