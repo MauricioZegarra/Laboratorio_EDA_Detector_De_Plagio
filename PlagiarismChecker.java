@@ -12,9 +12,9 @@ import javax.swing.JFileChooser;
 
 public class PlagiarismChecker extends JFrame {
 
-    private JTextArea originalTextArea;
-    private JTextArea checkTextArea;
-    private JTextArea resultTextArea;
+    private JLabek title = new JLabel("Detector de Plagio:");
+    private JLabel text = new JLabel("Haga click en el botón seleccionar archivo y espere a que se muestre una ventana con los resultados.");
+    private ResultChecker result;
 
     private String[] paths;
     private String suspicius;
@@ -68,8 +68,66 @@ public class PlagiarismChecker extends JFrame {
     }
 
     private void build() {
-        // 6UI (No está claro qué debe hacer exactamente, es necesario completar este
-        // método)
+        setTitle("Plagiarism Detector");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(500, 400);
+        setLocationRelativeTo(null);
+
+        // Crear componentes de la GUI
+        JPanel originalPanel = new JPanel();
+
+
+        // Definir el diseño de la GUI
+        setLayout(new GridLayout(3,1));
+
+        add();
+        add(checkPanel);
+        add(resultPanel);
+
+        // Agregar el ActionListener para el botón "Detectar Plagio"
+        detectButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                detectPlagiarism();
+            }
+        });
+
+    }
+
+    private void detectPlagiarism() {
+        String originalText = originalTextArea.getText();
+        String textToCheck = checkTextArea.getText();
+
+        // Limpiamos el trie antes de cada detección de plagio
+        root = new TrieNode();
+
+        String[] originalWords = originalText.split("\\s+");
+        for (String word : originalWords) {
+            // Convertimos todas las palabras a minúsculas para ser insensibles a mayúsculas
+            word = word.toLowerCase();
+            root.insert(word);
+        }
+
+        String[] wordsToCheck = textToCheck.split("\\s+");
+        List<String> plagiarizedWords = new ArrayList<>();
+        for (String word : wordsToCheck) {
+            // Convertimos todas las palabras a minúsculas para ser insensibles a mayúsculas
+            word = word.toLowerCase();
+            if (root.search(word)) {
+                plagiarizedWords.add(word);
+            }
+        }
+
+        // Actualizamos el área de resultado con las palabras plagiadas (si las hay)
+        if (!plagiarizedWords.isEmpty()) {
+            StringBuilder resultBuilder = new StringBuilder("Palabras plagiadas:\n");
+            for (String word : plagiarizedWords) {
+                resultBuilder.append(word).append("\n");
+            }
+            resultTextArea.setText(resultBuilder.toString());
+        } else {
+            resultTextArea.setText("No se encontraron palabras plagiadas.");
+        }
     }
 
     public static void main(String[] args) {
