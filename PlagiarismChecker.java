@@ -4,9 +4,18 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JPanel;
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
 
-public class PlagiarismChecker {
+public class PlagiarismChecker extends JFrame {
+
+    private JTextArea originalTextArea;
+    private JTextArea checkTextArea;
+    private JTextArea resultTextArea;
+
     private String[] paths;
     private String suspicius;
     private ArrayList<String> BD;
