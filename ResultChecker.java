@@ -27,17 +27,17 @@ public class ResultChecker {
         double jaccardSimilarity = calculateJaccardSimilarity(originalText, suspiciousText);
 
         // Mostrar el resultado del análisis en una ventana de diálogo
-        if (jaccardSimilarity < 0.3) {
+        if (jaccardSimilarity < 0.2) {
             this.type[count] = "nulo";
             this.result[count] = false;
         } 
         else if(jaccardSimilarity < 0.9) {
             this.type[count] = "parcial";
-            this.result[count] = false;
+            this.result[count] = true;
         }
         else {
             this.type[count] = "total";
-            this.result[count] = false;
+            this.result[count] = true;
         }
         
         count ++;

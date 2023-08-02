@@ -27,10 +27,10 @@ public class PlagiarismChecker extends JFrame {
     }
 
     public void readFiles(String[] paths) {
+        this.paths = paths;
         int i = 0;
         for (String path : paths) {
             try {
-                // Hace lectura del archivo en formato .txt, .docx y .pdf
                 byte[] fileContent = Files.readAllBytes(Paths.get(path));
 
                 // Convierte el contenido del archivo a una cadena
@@ -83,11 +83,11 @@ public class PlagiarismChecker extends JFrame {
         JButton forUpload = new JButton("Subir un archivo");
 
         // Definir el diseño de la GUI
-        setLayout(new BorderLayout());
+        setLayout(new GridLayout(3, 1));
         
-        add(this.title, BorderLayout.NORTH);
-        add(this.text, BorderLayout.CENTER);
-        add(forUpload, BorderLayout.SOUTH);
+        add(this.title);
+        add(this.text);
+        add(forUpload);
 
         // Agregar el ActionListener para el botón "Detectar Plagio"
         forUpload.addActionListener(new ActionListener() {
@@ -109,9 +109,6 @@ public class PlagiarismChecker extends JFrame {
 
         checker.readFiles(paths);
 
-        // Completa el método uploadFile
-        checker.uploadFile();
-
-        System.out.print(checker.BD.get(0) + checker.BD.get(1) + "  :::::" + checker.suspicius);
+        checker.setVisible(true);
     }
 }

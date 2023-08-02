@@ -1,394 +1,756 @@
-MusicGlove: Motivating and Quantifying Hand Movement
-Rehabilitation by using Functional Grips to Play Music
-Nizan Friedman, Vicky Chan, Danny Zondervan, Mark Bachman, Member, IEEE, and David J.
-Reinkensmeyer, Member, IEEE
-Abstract— People with stroke typically must perform much
-of their hand exercise at home without professional assistance
-as soon as two weeks after the stroke. Without feedback and
-encouragement, individuals often lose motivation to practice
-using the affected hand, and this disuse contributes to further
-declines in hand function. We developed the MusicGlove as a
-way to facilitate and motivate at home practice of hand
-movement. This low-cost device uses music as an interactive
-and motivating medium to guide hand exercise and to
-quantitatively assess hand movement recovery. It requires the
-user to practice functional movements, including pincer grip,
-key-pinch grip, and finger-thumb opposition, by using those
-movements to play different musical notes, played along to
-songs displayed by an interactive computer game. We report
-here the design of the glove and the results of a single-session
-experiment with 10 participants with chronic stroke. We found
-that the glove is well suited for use by people with an
-impairment level quantified by a Box and Blocks score of at
-least around 7; that the glove can be used to obtain a measure
-of hand dexterity (% of notes hit) that correlates strongly with
-the Box and Blocks score; and that the incorporation of music
-into training significantly improved both objective measures of
-hand motor performance and self-ratings of motivation for
-training in the single session.
-I. INTRODUCTION
-Stroke remains the leading cause of chronic adult
-disability in Western countries with over four million
-survivors currently living in the United States [1]. Following
-the onset of stroke, up to 85% of patients exhibit initial hand
-motor impairment for the first few weeks, and up to 75% six
-months post initial assessment [2]-[4]. Intensive movement
-training can reduce motor impairment after stroke [5].
-Unfortunately, the length of stay at inpatient rehabilitation
-facilities is now often limited to two weeks and outpatient
-Manuscript received March 23, 2011. The project described was
-supported by NIH-R01HD062744-01 from NCMRR and Grant Number
-UL1 RR031985 from the National Center for Research Resources (NCRR),
-a component of the National Institutes of Health (NIH) and the NIH
-Roadmap for Medical Research.
-N. Friedman is with the Department of Biomedical Engineering,
-University of California, Irvine, Irvine, CA 92617 USA (e-mail:
-friedman@uci.edu)
-V. Chan is with Rehabilitation Services, University of California at
-Irvine Medical Center, Irvine, CA 92697 USA (e-mail: vchan2@uci.edu).
-M. Bachman is with the department of Electrical and Computer Science
-and the Department of Biomedical Engineering, University of California,
-Irvine, CA 92617 USA (e-mail: mbachman@uci.edu
-D. J. Reinkensmeyer is with the Department of Anatomy and
-Neurobiology, the Department of Mechanical and Aerospace Engineering
-and the Department of Biomedical Engineering, University of California,
-Irvine, CA 92697 USA (e-mail: dreinken@uci.edu)
-physical therapy to two times a week thereafter [6]. Patients
-are therefore expected to perform intensive therapy at home
-with little direct supervision during the time window when
-the brain is most plastic [7]. Current home hand therapy
-typically consists of patients following through written
-sheets of exercises [8]. Without feedback and a motivating
-context for exercise, people often cease exercising the hand.
-Repetitive massed practice of movements and the
-intensity of movement are two of the most important factors
-for regaining motor function [9]-[11]. Music is a promising
-avenue for therapy because of its highly repetitive and
-motivating nature [9], [12]. Moreover, music therapy has
-been hypothesized to induce better cortical connectivity and
-improve motor cortex activation [9], [13]. Recognizing these
-potential benefits, several forms of music based therapy have
-emerged which focus on movement repetition and auditory
-feedback about movement precision [9], [12], [14].
-Corresponding Notes
-Fig. 1 a.) The five hand movements trained using MusicGlove, shown in
-three frames each progressing from beginning to end of the movement.
-When the user touches the thumb lead to one of the other 5 electrical leads,
-a distinct event is sent to the computer through the USB port b.) The
-MusicGlove interfaces with a computer game called FOF. In the game,
-colored notes scroll down the screen on five distinct frets. When the notes
-reach the bottom of the screen, the user must touch one of the five
-respective leads on the glove with their thumb within a 300 ms time frame.
-Hitting the note increases the volume of the music. Correct notes are logged
-and displayed in a summary at the end of the level providing a quantitative
-assessment of hand function.
-978-1-4244-4122-8/11/$26.00 ©2011 IEEE 2359
-33rd Annual International Conference of the IEEE EMBS
-Boston, Massachusetts USA, August 30 - September 3, 2011
-Technology for music-based therapy of hand movement is
-also emerging. For example, one study used a customized
-electronic keyboard and drum pad designed to train both fine
-as well as gross hand movement [9]. In another study,
-participants used a robotic and virtual system to play a
-simulated piano with the intent of training hand function
-[16]. Although these devices promote recovery of hand
-function, they do not specifically train the hand movements
-used in activities of daily living (ADLs).
-Our working hypothesis is that a musical training device
-that focuses on training functional hand movements will be
-more effective than a device that does not train such
-movements, due to the principle of specificity of motor
-training [17]. In other words, we hypothesize that people
-will improve function more if they practice the actual
-movements required for function.
-We therefore developed MusicGlove as a low cost device
-(< $100) for home hand rehabilitation. MusicGlove uses
-music as an interactive and motivating medium for therapy
-and to gain a quantitative assessment of the user’s progress.
-In addition, we designed MusicGlove to require performance
-of functional gripping movements to play musical notes;
-these movements include pincer grip, key-pinch grip, and
-finger-thumb opposition.
-The device presented here is similar to another glove
-based hand therapy device known as the HandTutor [18].
-However, based on the published report of its use, the
-HandTutor does not appear to be focused on using musical
-training for therapy. The HandTutor also focuses on finger
-range of motion exercises rather than on having the user
-complete pinch and grasp functions that are used in many
-ADLs.
-This paper describes the design of the MusicGlove and the
-results of initial single-session testing with the device. In this
-testing, we sought to understand what level of impairment
-the device was suited to treat; whether the quantitative
-measurements from the glove correlated with clinical scales
-of hand function; and whether people found the musical
-context for therapy motivating.
-II. METHODS
-A. Device Design
-MusicGlove is composed of a glove designed to train
-functional hand movements through interactive music-based
-computer games.
-1) Glove
-The glove contains six electrical leads located on all five
-fingertips and one on the proximal interphalangeal joint on
-the lateral aspect of the index finger. When the lead on the
-thumb touches any of the other five leads, an electrical
-connection is closed which is then registered by the
-computer as an event. The placement of the electrical leads
-forces the patient to engage in pinch and grasp motions
-associated with activities of daily living (ADLs), as well as
-thumb-finger opposition [19].
-We have initially designed MusicGlove to be used to play
-music on a pentatonic scale, common in Rock and Blues
-music. Fig. 1a shows the five movements that correspond to
-the five musical notes. It is possible to incorporate more
-notes by combining finger movements or placing more
-leads, or by using sensing of hand orientation to influence
-note selection.
-2) USB-Controller
-A USB-controller was built to interface the glove with a
-computer. A PIC18F14K50 microcontroller sends a unique
-output to the computer corresponding to each of the five
-digital inputs it receives.
-B. Software
-The MusicGlove is interfaced with a modified version of
-Frets on Fire (FOF)—an open source computer game similar
-to Guitar Hero©. During this game, five distinct notes scroll
-from the top to bottom of the screen (Fig 1b). When a note
-touches the stars at the bottom of the screen, the user has a
-300ms window to touch the thumb to the specific electrical
-lead associated with that note. Each note is synchronized
-with a song in order to create the perception of playing the
-song with the glove. The goal of the game is to correctly hit
-as many notes as possible by the end of the level.
-In order to use FOF for hand rehabilitation, several
-modifications were made to the source code. First, the
-graphical user interface and song selection were
-reconfigured towards people over age 50, as this is the
-predominant age range for people with stroke. When
-developing the songs, the difficulty level of each song was
-also configured to match the skill level of individuals with
-different levels of hand impairment. Moreover, the computer
-game was modified to enable both user and therapist to gain
-a quantitative assessment of motor function at the end of
-each song. The MusicGlove quantitative assessment shows:
-the number of correct notes hit on each fret, total number of
-correct notes hit, and an average of how close in time the
-individual was to hitting the note at the correct time.
-Specifically, the timing term is calculated as:
-(1)
-Where X = deviation in time of a correctly hit note (has to be
-within 300ms window to be considered correct), and n = the
-total number of correctly hit notes in a level.
-C. Participants
-A total of 10 participants who had experienced a stroke
-within the past three years were enrolled in the study (mean
-duration past stroke = 41.8 months +/- 15.6 SD). All
-participants had severe to moderate hand impairment as a
-result of stroke (Box & Block Test 0-46; 60 = normal).
-2360
-Participants provided informed consent according to the
-protocol approved by the U.C. Irvine Institutional Review
-Board.
-D. Procedure
-Motor function was first assessed using the Box & Blocks
-test by a trained physical therapist [15]. This assessment,
-which requires the testee to grab, move over a barrier, and
-drop as many blocks as possible in a one minute period, is
-widely used in motor rehabilitation of the upper extremity,
-and has good reliability and validity. Next, each participant
-donned the glove and was instructed how to generate an
-event by correctly touching the thumb to one of the five
-leads. The participant then played a tutorial in FOF that
-explained how to correctly match each of the five events
-with the five notes on the screen. The participants then
-began the training phase. Half of the participants played a
-level associated with the song Can’t Help Falling in Love
-three times with music and then three times without music
-(i.e. with the speaker turned off, but still with the graphical
-interface showing the desired notes). The other group played
-Can’t Help Falling in Love three times without music
-followed by three times with music. The trial was 2 minutes
-59 seconds in duration and contained a total of 82 notes, of
-which 28, 27, 27, 0, 0 of the notes were located on frets 1-5
-respectfully. Participants were given a maximum of one
-minute in between trials. At the end of each trial, the
-MusicGlove quantitative assessment was recorded. After all
-six trials were completed, the participants were asked to fill
-a questionnaire about their experience with the device.
-III. RESULTS
-A. Comparison of MusicGlove quantitative assessment
-with an established clinical measure of hand function
-Fig. 2 Shows the average percent of total notes hit versus the
-Box and Blocks score of each of the 10 participants in the
-study. There was a significant linear relationship between
-MusicGlove performance in FOF and Box and Block score
-(β = 0.51, t(9) = 10.76, p<0.001, r2
-= 0.79). Note that two
-of the 10 participants enrolled in the study could not
-participate in the training phase due to an inability to close
-the contacts between the thumb and other leads. These
-participants had Box and Blocks scores of 0 and 2. A third
-participant with a Box and Blocks score of 7 was able to
-participate in the training phase.
-Fig. 2. Average percent of total notes hit significantly predicts box and
-block score, β = 0.51, t(9) = 10.76, p<0.001, r2
-= 0.79. Error bars
-represent one standard deviation.
-B. Role of music in motor performance and motivation
-Participants attempted to perform the gripping
-movements with and without the musical feedback; in both
-cases they received graphical feedback from the computer
-screen about the desired notes and success in hitting those
-desired notes with the correct timing. Participants scored on
-average 10% higher, in terms of percentage of musical notes
-successfully played, when receiving music feedback (paired
-t-test, t(7) = 2.38, p = 0.048).
-Fig. 3. Participants on average performed 10% better in FOF level with
-music than without (paired t-test, t(7) = 2.38, p = 0.048). The thin lines
-represent the outcome of each participant. The thick line represents the
-average of these results.
-We also evaluated the average note timing term ( ) with
-and without music. As seen in fig. 4, participants on average
-did not show any significant difference in timing when
-playing the levels with and without music (paired t-test, t(7)
-= 0.43, p = 0.435).
-2361
-Fig. 4. Comparison of average note timing with and without music.
-Participants did not show a significant difference in the timing of hit note
-with and without music (paired t-test, t(7) = 0.43, p= 0.435). The thin lines
-represent the outcome of each participant. The thick line represents the
-average of these results.
-Fig. 5 shows the adaptation to playing FOF over the six
-trials. On average, participants improved in total amount of
-hit notes by 19.9% (SD = 18.5) from the first trial to the last.
-A paired t-test revealed a highly significant improvement in
-percent of total notes hit from the first trial to last, t(7) =
-3.94, p<0.001.
-Fig. 5. Percent total notes hit for each trial increases on average over the
-length of the training regimen. The thin lines represent the outcome of each
-participant. The thick line represents the average of these results.
-After the training session, we asked participants to
-complete a survey evaluating their experience (fig. 6). They
-found the training motivating, challenging, and desirable for
-home use. The participants found training with music to be
-significantly more motivating than training without music
-(paired t-test, t(7) = 5.6, p<0.001).
-Fig. 6. MusicGlove questionnaire shows that individuals approve of the
-therapy, and find it motivating. Participants found therapy with music to be
-more motivating than therapy without music (paired t-test, t(7) = 5.6,
-p<0.001). Error bars represent one standard deviation.
-IV. DISCUSSION
-We developed a low-cost device that senses when people
-complete functional grips, including pincer grip, key pinch,
-and thumb-finger opposition. We interfaced the glove to a
-music game that requires the player to try to play notes along
-to songs using the functional grips. We tested the glove in a
-single session test with 10 people with a chronic stroke. The
-findings from this test and their significance are as follows.
-First, we found that the glove is suitable for use by people
-with an impairment level quantified by a Box and Blocks
-score of approximately 7 or above. This means that the glove
-is suitable for people who have a moderate to low level of
-hand impairment. Note that all individuals who were able to
-use the glove to play music were able to don it without
-assistance; thus the glove is suitable for home-use by the
-population who can engage in its training paradigm. We are
-currently working on a robotic version of the glove that
-could assist people with a more severe level of hand
-impairment in using the same musical paradigm to exercise
-[20].
-Second, we found that the glove can be used to obtain a
-measure of hand dexterity (% of notes hit) that correlates
-strongly with the Box and Blocks score. Since Box and
-Block score is an established indicator of hand motor
-function, this strong correlation indicates that MusicGlove
-can provide an objective measure of hand function.
-Moreover, this correlation suggests that improvement in
-MusicGlove performance will in turn lead to improved hand
-function.
-Third, the use of music for training significantly improved
-both objective measures of hand motor performance and
-self-ratings of motivation for training. This finding suggests
-that patients will be both more engaged in the task during
-training and will be motivated to perform the therapy for
-long durations. Note that music improved the ability to hit
-the right note with the right grip, but did not improve timing.
-This result is contrary to previous findings [7]. A larger
-2362
-sample size is needed in order to validate this finding.
-In conclusion, the MusicGlove was shown to be a
-motivating device for repetitive training of functional hand
-grips. Moreover, music was found to significantly increase
-the performance and motivation of the participants.
-Longitudinal clinical trials will be implemented to test
-whether training with the MusicGlove improves hand
-function after stroke.
-ACKNOWLEDGMENT
-Nizan Friedman thanks Justin Rowe for help in designing
-the Frets on Fire interface.
-REFERENCES
-[1] Heart Disease and Stroke Statistics, 2010 Update, American Heart
-Association, Dallas, TX, 2010.
-[2] G. Bard and G. G. Hirschberg, ―Recovery of voluntary motion in
-upper extremity following hemiplegia,‖ Archives of Physical Medicine
-and Rehabilitation, vol. 46, pp. 567-574, July 1965.
-[3] V. M. Parker and D. T. Wade, ―Hewer RL. Loss of arm function after
-stroke: measurement, frequency, and recovery,‖ International
-Rehabilitation Medicine. vol. 8, pp. 69-73, 1986.
-[4] D. T. Wade, R. Langton-Hewer, V. A. Wood, C. E. Skilbeck and H.
-M. Ismail, ―The hemiplegic arm after stroke: measurement and
-recovery,‖ Journal of Neurology, Neurosurgery, and Psychiatry. vol.
-46, pp. 521-524, 1983.
-[5] Cramer S, ―The EXCITE Trial A Major Step Forward for Restorative
-Therapies in Stroke,‖ Stroke vol. 38, pp. 2204-2205, 2007.
-[6] D. Reinkensmeyer, P. Lum, and J. Winters, ―Emerging technologies
-for improving access to movement therapy following neurologic
-injury,‖ Rehabilitation, pp. 1-15, 2002.
-[7] J. Liepert, H. Bauder, W. H. Miltner, E. Taub and C. Weiller,
-―Treatment-induced cortical reorganization after stroke in humans,‖
-Stroke. vol. 31, pp. 1210-1216, 2000.
-[8] G. Kielhofner, ―Conceptual Foundations of Occupational Therapy,‖
-FA Davis Company, Philadelphia, PA, 1997.
-[9] E. Alten Muller, S. Schneider, P. W. Marco-Pallares and T. F. Munte,
-T.F, ―Neural reorganization underlies improvement in stroke induced
-motor dysfunction by music supported therapy,‖ Annals of the New
-York Academy of Sciences. vol. 169, pp. 395-405, 2009.
-[10] A. Sterr, T. Elbert, I. Berthold, S. Kolbel, B. Rochstroh, and E. Taub,
-―Longer versus shorter daily constraint-induced movement therapy of
-chronichemiparesis: An exploratory study,‖ Archives of Physical and
-Medical Rehabilitation. vol. 830, pp. 1374-1377, 2002.
-[11] H. E. Jiping, E. J. Koeneman, R. S. Schultz, H. Huang, J. Wanberg, D.
-E. Herring, T. Sugar. R. Herman and J. B. Koeneman, "Design of a
-robotic upper extremity repetitive therapy device," in Proc. 9th
-International Rehabilitation Robotics Conference. 2005 pp. 95- 98,
-July, 2005.
-[12] S. Schneider, P. W. Schonle, E. Altenmuller and T. F. Munte, ―Using
-musical instruments to improve motor skill recovery following a
-stroke,‖ Journal of Neurology. vol 254, pp. 1339-1346, 2007.
-[13] N. M. Russo, T. G. Nicol, S. G. Zecker, E. A. Hayes and N. Kraus,
-―Auditory training improves neural timing in the human brainstem,‖
-Behavioral Brain Research. vol 156, pp. 95-103, January, 2005.
-[14] M. Bangert and E. Altenmuller, ―Mapping perception to action in
-piano practice: A longitudinal DC-EEG-study,‖ BMC Neuroscience,
-vol. 4, pp. 26-36, 2003.
-[15] V. Mathiowetz, G. Volland, N. Kashman and K. Weber, ―Adult
-Norms for the Box and Block Test of Manual Dexterity,‖ Am J
-Occupational Therapy. vol. 39, pp. 386-391, June, 1985.
-[16] S. V. Adamovich, G. G. Fluet, A. Mathai, Q. Qiu, J. Lewis and A. S.
-Merians, ―Design of a complex virtual reality simulation to train
-finger motion for persons with hemiparesis: a proof of concept study,‖
-J Neuroengineering Rehabilitation. vol. 6 pp. 28, July 2009.
-[17] R. A. Schmidt, ―Motor control and learning: a behavioral emphasis,‖
-Human Kinetics, Champaign, IL, 1998.
-[18] E. Carmeli, S. Peleg, G. Bartur, E. Elbo, and J. Vatine,
-―HandTutor(TM) enhanced hand rehabilitation after stroke - a pilot
-study,‖ Physiotherapy research international: the journal for
-researchers and clinicians in physical therapy. 2010.
-[19] J. House, F. W. Gwathmey and D. K. Lundsgaard, ―Restoration of
-strong grasp and lateral pinch in tetraplegia due to cervical spinal cord
-injury,‖ J Hand Surgery 1. pp. 152–159, 1976.
-[20] E. T. Wolbrecht, D. J. Reinkensmeyer, A. Perez-Gracia, ―Single
-Degree-of-Freedom Exoskeleton Mechanism Design for Finger and
-Thumb Rehabilitation,‖ IEEE ICORR, to be published.
+Journal of Hand Therapy xxx (2020) 1e10
+
+Contents lists available at ScienceDirect
+
+Journal of Hand Therapy
+journal homepage: www.jhandtherapy.org
+
+Design and development of a sensored glove for home-based
+rehabilitation
+Vinesh Janarthanan a, Md Assad-Uz-Zaman MSc Eng a, Mohammad Habibur Rahman PhD a, *,
+Erin McGonigle MD b, Inga Wang PhD c
+a
+
+BioRobotics Lab, Mechanical/Biomedical Engineering, University of Wisconsin Milwaukee (UWM), WI, USA
+Physical Medicine and Rehabilitation, Medical College of Wisconsin, WI, USA
+c
+Occupational Science and Technology, College of Health Science, UWM, WI, USA
+b
+
+a r t i c l e i n f o
+
+a b s t r a c t
+
+Article history:
+Received 3 May 2019
+Received in revised form
+11 December 2019
+Accepted 31 March 2020
+Available online xxx
+
+Study Design: Descriptive.
+Introduction: Rehabilitation programs that focus on motor recovery of the upper limb require long-term
+commitment from the clinicians/therapists, require one-to-one caring, and are usually labor-intensive.
+Purpose of the Study: To contribute to this area, we have developed a sensored hand glove integrated with
+a computer game (Flappy Bird) to engage patients playing a game where the subject's single/multiple
+ﬁngers are involved, representing ﬁne motor skill occupational therapeutic exercises.
+Methods: We described the sensored rehab glove, its hardware design, electrical and electronic design
+and instrumentation, software design, and pilot testing results.
+Results: Experimental results supported that the developed rehab glove system can be effectively used to
+engage a patient playing a computer game (or a mobile phone game) that can record the data (ie, game
+score, ﬁnger ﬂexion/extension angle, time spent in a therapeutic session, etc.) and put it in a format that
+could be easily read by a therapist or displayed to the therapists/patients in different graph formats.
+Conclusions: We introduced a sensored rehab glove for home-based therapy. The exercise training using
+the glove is repetitious, functional, and easy to follow and comply with.
+Published by Elsevier Inc. on behalf of Hanley & Belfus, an imprint of Elsevier Inc.
+
+Keywords:
+Flex sensor
+Game
+Rehab Glove
+Hand therapy
+
+Introduction
+Stroke is one of the leading causes of long-term disability. A
+primary concern for stroke survivors is reduced mobility. In fact,
+more than 50% of those who are aged 65 years and older and have
+survived a stroke are left with impaired mobility.1 According to the
+World Health Organization, stroke affects more than 15 million
+people worldwide each year.2 Among these, 85% of stroke survivors
+will incur arm impairment, and 40% will be chronically impaired or
+permanently disabled.3 However, stroke is only one of many causes
+of physical disability. A loss or decrease in motor function may
+result from spinal cord injuries, cerebral palsy, motor neuron disease, traumatic brain injuries, Parkinson’s disease, sports injury, etc.
+It is estimated, more than 3 million people in the USA have a
+disability in their hands and/or forearms, including paralyzations,
+orthopedic impairments, either congenital or injury related.4 Hand
+injuries count for 1/3 of all injuries at work, 1/3 of chronic injuries,
+
+* Corresponding author. University of Wisconsin Milwaukee (UWM), WI 53211,
+USA.
+E-mail address: rahmanmh@uwm.edu (M.H. Rahman).
+
+1/4 of lost working time, 1/5 of permanent disability.5 This results in
+a burden on their families, communities, and the country as well.
+Approximately 50 million family caregivers provide 37 billion hours
+of care worth more than an estimated $470 billion annually to their
+family and other loved ones.6 The total estimated economic value of
+uncompensated care provided by family caregivers surpassed total
+Medicaid spending ($449 billion) and nearly equaled the annual
+sales ($469 billion) of the four largest U.S. tech companies combined (Apple, HewlettePackard, IBM, and Microsoft).6 These
+numbers will continue to rise as the population continues to age.
+Biomedical technologies that augment/restore an individual's
+upper extremity function have been on the rise in the past decade,
+yet are still not able to satisfy the patients' need of restoring lost
+upper extremity function. Many advancements have been made to
+develop new technology/devices to optimize/enhance the rehabilitation process in relation to comfort, interactive engagement of
+patients, price, size, portability, therapist feedback, and effectiveness. Contemporary solutions attempt to satisfy at least one of the
+listed criteria. However, this is very inefﬁcient when looking at the
+broader scheme of rehabilitation.
+Modern rehabilitation applies the principle of neuroplasticity to
+repetitive task practice training as the most effective means of
+
+0894-1130/$ e see front matter Published by Elsevier Inc. on behalf of Hanley & Belfus, an imprint of Elsevier Inc.
+https://doi.org/10.1016/j.jht.2020.03.023
+
+2
+
+V. Janarthanan et al. / Journal of Hand Therapy xxx (2020) 1e10
+
+treating the patient. Coupling this with wearable technology, such
+as devices that come in the form of gloves, patients with impaired
+hand mobility can bolster existing motoneuron connections and
+rewire their brains to develop new ones. Research shows that brain
+plasticity can be capitalized on to improve rehabilitation efforts and
+retrieve biological functionality.7
+However, advanced technologies can potentially be used to increase rehabilitation accessibility to the patients, and it can be used
+to motivate patients for rehabilitation exercise.8 It is evident from
+the recent research results9 that the computer gameebased rehabilitation solutions have the potential of integrating challenging
+environments/elements and offering motivation into the therapy
+routines, thereby increasing patient inspiration to follow through
+with previously tedious tasks. For these reasons, interactive computer gaming technology has gained attention as a component of
+rehabilitation. In past decades, Alankus et al,9 Annet et al,10 Shah
+et al,11 and several others developed different types of game-based
+rehabilitation systems for the rehabilitation of human upper extremity. While novel ground work, these systems have room for
+improvement in ordr to make therapy more entertaining, engaging,
+user-friendly, and challenging.12,13 It is worth noting that patients
+prefer to perform game-based rehabilitation exercises at home for
+long-term recovery.14
+The literature review reveals that several hand rehabilitation
+devices have been recently developed to improve weakness, loos
+of coordination, or impaired dexterity. For example, Sasidharan
+et al15 developed a smart glove with the use of resistive strip
+sensors to analyze the ﬂexion and extension of the index ﬁnger
+and the wrist. During testing with this glove, many design ﬂaws
+were noted and several were adapted during testing to improve
+the function of the glove. Results of the testing showed that the
+glove could detect wrist and index ﬁnger extensions but that the
+sensitivity had to be calibrated for each patient. Similarly, a group
+of researchers at the Sapienza University16 used two LEAP Motion
+controllers positioned orthogonally to create a virtual glove to
+assist patients recovering from a stroke. They have used 3dimensional multisensor technology to map the movement and
+function of the hand. However, the experimental data to observe
+the behavior of the system reveals, both in the infrared interferences and in the reference system roto-translation experiments, the discrepancy of the data was observed because of an
+intrinsic lack of accuracy of the LEAP sensor along the Z direction.
+Taking a mechanical approach to stroke recovery, Hong Kai et al17
+have developed a soft pneumatic glove. Their pilot test results
+reveal that the glove is able to provide grasping assistance to the
+hand to augment the stroke survivor's motion. Future work with
+this glove include adding objective measures such as force, range
+of motion (ROM), grip strength, and so forth. Recently, a group of
+researchers devised the MusicGlove18 that is intended for the
+same purpose as the other projects listed. Using an interactive
+gameebased therapy, the MusicGlove is a glove that senses the
+repetitive performance of pinching exercises and therefore it
+cannot provide individual/multiﬁnger ﬂexion/extension exercises.
+These are just a few of the many examples of research contributions to this area in the ﬁeld within the past few years. A limitation
+in the majority of these examples is that they lack visual feedback
+to its users; ﬂexibility of multiﬁnger motion exercise; ability to
+provide the therapist with objective data such as individual's
+progress/recovery, increase of ROM, time taken to perform a
+functional task, and so forth. Thus, measures of how effective the
+therapy is to the patients reveal that enhanced motor learning
+occurs in the ‘active rehabilitation therapy’ mode, when patients
+(independently) practice a variety of functional tasks.19 Therefore,
+in this research, we have developed a novel rehabilitation scheme
+with a game-interfaced sensored rehab glove. Our compact glove
+
+has the capability of engaging a patient playing a computer game
+(or a mobile phone game) that will record the data and put it in a
+format that could be easily read by a clinician or displayed to the
+clinicians in different graph formats. Some of the features of this
+glove include its portability, size, price, therapist feedback, and
+patient engagement.
+In the next section of this article, a detailed overview of the
+design and development (hardware design/fabrication, electrical
+instrumentation, and software development) of the proposed
+sensored rehabilitation glove is presented. Experimental results
+with the developed sensored rehab glove interfaced with a game are
+presented in Experiment and Results section. Finally, the article
+ends with a conclusion and future research works in Conclusion
+section.
+Sensored rehab glove
+The proposed sensored glove is designed to be integrated with a
+computer game to engage patients in a therapeutic session where a
+patient plays a game during which single/multiple ﬁnger ﬂexion/
+extension motions are required. The integrated system (sensored
+glove þ game) provides (a) real-time data to the patients about
+their performance (eg, an increase of ROM) and (b) detailed analysis
+of the patient's progression to the therapist. The glove is designed
+for the patients to step outside of the therapist's ofﬁce and still be
+able to proceed with the training exercises in a way that is motivating. However, therapists still play an integral part by monitoring
+their progress, directing them through the activities, and correcting
+the patient's mistakes during follow-ups.
+Hardware design of proposed sensored rehab glove
+When designing a device that will be used for a clinical purpose
+on individuals who lack certain abilities, it is crucial to adapt the
+design to the user's needs. Convenience, portability, and comfort
+were the three primary factors that we took into account during the
+development of the proposed sensored rehab glove. Typically, a
+glove is a garment (Fig. 1A) that covers the entire hand. Considering
+that we are working with the hand, it seemed most logical to use a
+glove. The glove that we have chosen ﬁts each ﬁnger snug so that
+the ﬂexing of each ﬁnger is most accurately represented through
+the bend in the glove. The glove is loose enough so that the hand
+can slide in with ease and there is minimal need for the gloved hand
+to cooperate while putting it on. Five ﬂex sensors (one for each
+ﬁnger, as shown in Figs. 1A and 1B) have been instrumented on the
+glove to measure the ﬂexion/extension of the ﬁnger.
+Note that, we fabricated a small pocket onto each ﬁnger of the
+glove so that the ﬂex sensor does not have any room to wiggle or
+slip out. These pockets were sewn closed to ensure that the ﬂex
+sensors do not come out. For demonstration purpose, the ﬂex
+sensors’ instrumentation on the glove is illustrated in Figure 1A. An
+elastic Velcro strap at the wrist ensures that the glove stays on tight
+and does not move around as it is being used to play the game.
+In a normally functioning hand, the metacarpophalangeal (MCP)
+joints are independent of the distal interphalangeal (DIP) and the
+proximal interphalangeal (PIP) joints. In addition, the DIP and PIP
+joints are both usually ﬂexing simultaneously. Therefore, this type
+of sensor (Flex Sensor) is not entirely an accurate representation of
+the angle at which the ﬁnger is bending because it does not take
+each joint into consideration. Instead, the sensor detects overall
+ﬂexion as shown in Figure 2. Therefore, the angle that the sensor
+reads could be interpreted as the combination of MCP, DIP, and PIP
+joint angles (for the thumb, it will be the combination of
+interphalangeal (IP) and thumb's metacarpophalangeal (MCPT)
+
+V. Janarthanan et al. / Journal of Hand Therapy xxx (2020) 1e10
+
+3
+
+Fig. 1. Sensored glove system; (A) schematic of ﬂex sensors instrumentation on the glove; (B) Flex sensor; and (C) developed sensored rehab glove with the circuitry open for
+display.
+
+joint angles). Figure 2A shows the schematic of a ﬂex sensor's
+resting state (angle 180 ) and its fully ﬂexed state (angle 0 ).
+Hard exoskeletal devices are commonly known for becoming
+uncomfortable after prolonged use. An experimental comfort
+assessment has shown that rigid devices create signiﬁcant
+discomfort and limit the range of movement.20 Similar to modern
+trends, we have fabricated the glove from soft materials, to ensure
+comfort throughout the training session. Essentially, when the
+glove is on the hand, the patient will not even realize it. Moreover,
+the utilization of a Bluetooth module, a compact design, and
+development of a versatile software make this very lightweight and
+portable. The developed sensored glove can be used at home so that
+repetitive task practice is maintained and the rate of neuroplasticity
+is maximized outside of the therapist's ofﬁce.
+
+Electrical and electronic design and instrumentation
+The electronic hardware design is built on the Arduino Nano21
+open-source microcontroller as depicted in Figure 3. This made it
+easy to acquire ﬂex sensor angles (ie, combined MCP, PIP, and DIP
+ﬂexion/extension angles). Five resistive ﬂex sensors are run
+through with a standard voltage of 5 V. As shown in Figure 2A,
+when a ﬂex sensor is in its ﬂat/resting orientation (ie, when the
+MCP, PIP, and DIP joints are in resting state as shown in Fig. 2B), it
+has a resistance of 25 KU. When the ﬂex sensor is ﬂexing (ie, when
+the ﬁnger is ﬂexing), the resistance of the sensor increases; and in a
+fully ﬂexed position of the sensor (ie, fully ﬂexed position of a ﬁnger
+as shown in Fig. 2C), the resistance of the ﬂex sensor increases to
+125 KU, which is a 0 pinch bend as shown in Figure 2A. Therefore,
+
+Fig. 2. MCP, PIP, and DIP ﬂexion/extension estimation from ﬂex sensor. (A) Schematic diagram of the resistive ﬂex sensor shows the resting orientation (180 ) and the fully ﬂexed
+position (0 ); (B) resting state of MCP, DIP, IP, MCPT, and PIP joints (where, qMCP ¼ 180 , qDIP ¼ 180 , and qPIP ¼ 180 ); and (C) fully ﬂexed position of MCP, DIP, PIP, IP, and MCPT joints
+(where, qMCP ¼ 90 , qDIP ¼ 90 , qIP ¼ 90 , qMCPT ¼ 90 , and qPIP ¼ 90 ).
+
+4
+
+V. Janarthanan et al. / Journal of Hand Therapy xxx (2020) 1e10
+
+Software design
+
+Fig. 3. Arduino, breadboard, and all electrical instrumentation housed in a 3D printed
+case.
+
+this sensor is capable of capturing the full motions of both ﬂexion
+and extension of individual ﬁngers.
+A Bluetooth module embedded Arduino Nano transmits the raw
+data from the glove's sensors to the USB dongle on the computer. As
+discussed previously, wireless communication between the glove
+and the computer makes the glove more convenient and eliminates
+the risk of tangled wires.
+The utilization of a Bluetooth module proved to be as easy as
+creating a glove that was tethered to a computer (also can be
+tethered to a smartphone). The USB dongle is the receiver for the
+Bluetooth connection and receives all of the analog signals from the
+ﬂex sensors representing ﬂexion/extension of MCP/PIP/DIP joint
+angles. The Arduino Nano itself is the transmitter, sending the raw
+analog signals that are captured from the glove. The connection
+between these two devices automatically takes place once the
+dongle is in the USB port of the computer and the Arduino is
+switched on and connected to power, ultimately eliminating the
+need to pair the two Bluetooth devices. Note that, the raw analog
+signals acquired from the ﬂex sensors are ﬁltered before producing
+the desired results showing the ﬂexion/extension angles of the
+ﬁngers, that is, our key objective measures of a therapeutic session
+using the developed sensored glove.
+
+There are two separate programs to the software side of this
+project, (a) the Arduino programming (microcontroller programming) and (b) the game-interface development. The ﬁrst part of the
+program (Arduino programming) records the live (real-time) data
+from the glove of each ﬁnger's ﬂexion/extension, sensed by the
+resistive ﬂex sensors. These ﬂex senor data are then converted and
+mapped to the corresponding ﬁnger ﬂexion/extension angle. Later,
+the Arduino program compiles the mapped data along with a
+unique identiﬁer and sends those to a separate program called
+‘Processing’.22 Processing is a language that was built based on the
+Java Language with simpliﬁed syntax. The Processing receives the
+data, parses the unique identiﬁer from the numerical value, and
+stores it as an integer. The Flappy Bird game,23 which was developed in Processing, is then able to easily interpret the ﬁnger ﬂexion/
+extension angle through the basic logic and conditional statements.
+The objective of making this game is to drive the subjects to work/
+play with their ﬁngers in a full ROM.
+Flappy Bird is one of the most popular and addictive gamesapproximately 18 million people have played this game.24 It is an
+open-source game that is why one can use its source code and
+modify it to add new features. In a traditional Flappy Bird type
+game, the player has full control over the bird's height. However, in
+our developed version, the user controls the bird's entrance in
+between the green tubes (see Fig. 4). It appeared very difﬁcult to
+control the bird's ﬂaps through the glove itself. Therefore, this
+alternative solution allows for simplicity for those with impaired,
+weak muscle function. When an individual (wearing the glove)
+starts a therapeutic session with this game, two green tubes and a
+name of a ﬁnger appear to play the game (Fig. 4). The individual
+must bend (ﬂex/extend) that ﬁnger completely to the best of their
+ability to lift the bird to a height in between the green tubes as the
+bird crosses the tubes. As shown in Figure 4A, the game asks the
+player to ﬂex her pinky ﬁnger to the best of their ability. Each
+successful attempt at bending the ﬁnger while crossing the tubes
+will result in their score to increase by one. However, if the individual fails to bend (ﬂex/extend) that particular ﬁnger within an
+allowable range, then the game will end and their score will be
+displayed. Also, if the individual bends (ﬂex/extend) other ﬁngers
+beyond the allowable range, the game will end immediately
+showing ‘wrong ﬁnger movement.’ Therefore, a player can not cheat
+the game. For instance, in Figure 4C, the player did not ﬂex the ring
+
+Fig. 4. Three screenshots of the game are presented to show what the game looks like and how it functions. (A) This screenshot depicts a player with a score of 4 points, and the
+game asks the player to ﬂex her pinky ﬁnger; (B) this screenshot presents a multiﬁnger motion exercise that the player must perform; (C) this screenshot shows the game has ended
+after the player made an error.
+
+V. Janarthanan et al. / Journal of Hand Therapy xxx (2020) 1e10
+
+ﬁnger and, therefore, the game ended. The goal is to make an
+entertaining and engaging environment of providing therapeutic
+exercise for individuals with loss of motor function in the hand.
+Therefore, the game gets progressively more difﬁcult as the player
+advances through the game. For example, in our default setting, if a
+player scores 10, the game will require him/her to coordinate with
+more than one ﬁnger. This case is presented in Figure 4B as the
+game requires the player to ﬂex both their index and ring ﬁnger
+simultaneously. The program includes all possible combinations of
+two ﬁngers and multiﬁnger ﬂexion/extension motions. This allows
+for the patient to perform complex ﬁnger motions when they are
+suited to go to that stage. The game can be played either on a
+computer or on a feature phone/smartphone/tablet. Provisions
+included in the game (a) to set up the time limit, or allow players to
+play as long as they want; (b) customize the difﬁculty level
+threshold (default setting is level 1 for score less than 10; level 2:
+scores from 10 to 20; level 3: score >20); (c) customize the single
+and multiﬁnger repetitions (default setting is randomly selected);
+(d) slow/speed up the game (to facilitate slow or fast ﬂexion/
+extension of ﬁnger); and (e) reverse the game control for poststroke
+patients with ﬂexure contractures where an individual must extend
+his/her ﬁnger completely to the best of their ability to lift the bird to
+a height in between the green tubes as the bird crosses the tubes.
+Each time a patient plays the game, the score will be recorded in
+a ﬁle that the therapist can access. This provides the patient with
+information such as the maximum degrees the ﬁnger was bent, the
+minimum it was bent, the score of each game, and the date/time
+the game was played. The physical or the occupational therapist
+may use this information to track the patient's progress over time
+to evaluate the extent to which the patient has progressed and
+beneﬁted through the therapy.
+Experiment and results
+The glove concept is based on the idea that exercises that engage
+individuals during the practice of motor activities are often beneﬁcial for neurorehabilitation as shown through numerous
+studies.25 When these practices are implemented with repetition
+and complexity, they prove to be effective.26 The entire outline of
+the therapeutic process with the glove is illustrated in Figure 5. An
+individual will play an open-source game named Flappy Bird
+
+5
+
+wearing a sensored glove. The game was adapted and customized
+for the developed sensored glove system. The glove will wirelessly
+transmit experiment data (ie, the ﬂex-sensor signals) to the computer/smartphone (where the game runs) as the control input for
+the game. As mentioned earlier, the ﬂex sensors are attached to
+each ﬁnger of the glove and provide the ﬂexion/extension information of the ﬁnger. As shown in Figure 5, this information is then
+interpreted by the program and converted into a ﬂexion/extension
+angle (in degrees) that the ﬁnger is bent to identify the instantaneous position of the ﬁngers. In the game interface, the ﬂexion/
+extension angle determines the ﬂying height of the bird on the
+screen. Moreover, this position information of the ﬁngers will allow
+the computer to determine whether the user is performing the task
+with accuracy. If the accuracy is poor, then the game interface will
+provide visual feedback to the user alerting them that they have
+made a mistake. The session data are compiled and placed in a log
+ﬁle. This log will be used by the therapist to analyze the patient's
+performance and make any adjustments as needed.
+To demonstrate the proof of concept (as well as to evaluate the
+performance of the developed ‘game-interfaced sensored glove system’), an experiment was designed with three healthy subjects
+(subject 1: age 17 years (male); subject 2: age 37 years (female);
+and subject 3: age 44 years (male)).
+When considering the presented data, it should be noted that
+each individual possessed varying video game experience. In
+addition, because the subjects of the experiment were healthy and
+possessed no physical disabilities, the performance would theoretically be much better than that of a patient. This game was
+designed for those with motor disabilities; thus, the simplicity of
+the game was of high priority. Therefore, the results themselves
+should not be considered with high importance. The subjects put
+the glove on and played the game ten times each. Results were then
+plotted on a graph showing the dates/time and the duration the
+game was played, the score that they received, and the complete
+history of ﬁngers ﬂexion/extension angles. Figure 6 display the
+score that subjects received after they had played the game each
+day. Tables 1e3 were obtained from the data log of the game. From
+this data log, a therapist can monitor how often a patient has
+participated in the game (therapeutic session), the time he/she
+spent in the sessions, and so forth. As shown in Figure 6A, subject 1
+did not play the game on March 31st. Also, it will help the therapist
+
+Fig. 5. Block diagram showing an overview of how the therapeutic process with the developed sensored glove works.
+
+6
+
+V. Janarthanan et al. / Journal of Hand Therapy xxx (2020) 1e10
+
+Fig. 6. The game score received throughout the 10 days, (A) subject 1's logbook; (B) subject 2's logbook, and (C) subject 3's logbook.
+
+to track the progress of the patients. Here, in Figure 6A, a slight
+upward trend could be noticed; this may be the result of a better
+understanding of the game over time. The data are presented
+simply to demonstrate how the patient's progress will be tracked
+and how the therapist could potentially interpret this information.
+From the data log, a therapist can quantitatively measure the
+subject's progress by analyzing the subject's ﬁnger ﬂexion/extension
+angles for each session the subject has played the game.
+
+Experimental results of three different subjects playing the game
+are shown in Figures 8-11, where subjects' ﬁnger ﬂexion/extension
+angles are plotted from the data log of a few randomly selected
+game sessions. Figure 7 explains how to interpret the results of
+Figures 8-11. It can be seen from Figure 7 that a plot (dotted line)
+from the area of red line (180 ) toward the green line (0 ) indicates
+the ﬁnger has bent from its extension position (180 ) to ﬂex position (0 ), whereas a plot (dotted line) from the area of green line
+
+V. Janarthanan et al. / Journal of Hand Therapy xxx (2020) 1e10
+Table 1
+Game score of subject 1
+
+7
+
+Table 3
+Game score of subject 3
+
+Date
+
+Score
+
+Date
+
+Score
+
+3/22/2019
+3/23/2019
+3/24/2019
+3/25/2019
+3/26/2019
+3/27/2019
+3/28/2019
+3/29/2019
+3/30/2019
+4/1/2019
+
+4
+4
+7
+11
+14
+13
+6
+18
+8
+23
+
+3/22/2019
+3/23/2019
+3/23/2019
+3/23/2029
+3/26/2019
+3/27/2019
+3/28/2019
+3/29/2019
+3/30/2019
+4/1/2019
+
+25
+34
+35
+11
+10
+32
+28
+27
+41
+23
+
+(0 ) toward the red line indicates the ﬁnger has bent from its ﬂexed
+position (0 ) to extension position (180 ).
+As mentioned earlier, the proposed rehabilitation scheme can be
+facilitated both for ﬁnger ﬂexion and extension movement in the
+game. Figure 8 shows the experimental results, where the subject
+conducts ﬁnger extension motion (to lift the bird) to play the game.
+Whereas, in Figures 9 and 11, the subjects perform ﬁnger ﬂexion
+motion (to lift the bird) to play the game. Based on the subject's
+ﬁnger impairment, a therapist can prescribe the ﬂexion or extension motion the subject should choose to play the game. As shown
+in Figure 8B, all the scoring ﬁnger movement (seven times, as
+shown in Fig. 8B) occurred when joint angle moves from near 0 to
+near 180 degree and all initial joint angles are in near 0 , which
+indicates ﬁnger motion from ﬂexed position toward an extension.
+Whereas in Figures 9 and 11, a reverse ﬁnger motion produces a
+score, that is, ﬁnger ﬂexion motion from its extension position will
+produce a score. Note that, in our default game setting, instruction
+for multiﬁnger motion appears when a subject reaches a score of
+10, but provision has been included in the game to change the
+difﬁculty level threshold as desired (by the therapists/subjects).
+Game difﬁculty levels are described in the following:
+ Difﬁculty level 1: This is our default game setting for a score of
+less than 10. At this setting, a random ﬁnger name appears on the
+screen. The subject must ﬂex/extend that ﬁnger to play the game.
+ Difﬁculty level 2: When a subject scores 9, the default setting of
+the difﬁculty level moves to the level 2, where two ﬁngers'
+simultaneous movement is required to play the game. At this
+setting, a random combination of two ﬁngers' names appears on
+the screen. The subject must ﬂex/extend those two ﬁngers to play
+the game.
+ Difﬁculty level 3: When a subject scores 20, the default setting of
+the difﬁculty level moves to level 3, where three ﬁngers' simultaneous movement often required to play the game. At this
+setting, a random combination of three ﬁngers' names often
+appears on the screen. The subject must ﬂex/extend those three
+ﬁngers to play the game.
+
+From Figure 8B, it is clearly evident that there were seven instances in that session where ﬁnger extension motion happened as
+can be seen from the seven peaks which have resulted in a score of
+7. It can be also observed from Figure 8B that there were no overlapping peaks in that session, that is, there is no simultaneous
+motion of multiﬁngers involved in that session.
+Experimental results with subject 2 are presented in Figures 9 and
+10. The Figure 9 demonstrates a different scenario where simultaneous motions of two ﬁngers (index and pinky) toward the complete
+ﬂexion motion are observed in the game (for the ﬁrst time) around at
+26 sec (as evident from the overlapping double peaks) when the
+subject reached the difﬁculty level 2, that is, after scoring points 9 (ie,
+after 9 nonoverlapping peaks). A few more two ﬁngers’ simultaneous
+movements but with the different combinations of two ﬁngers are
+observed from 26 sec to 45 secs (as evident from the double peaks,
+scores: 10-16). Figure 10 shows the results of the same experiments
+presented in Figure 9, but the results are plotted separately for one
+ﬁnger ﬂexion/extension motion in Figure 10A, and two ﬁngers’
+simultaneous ﬂexion/extension motion in Figure 10B.
+Experimental results with subject 3 are presented in Figure 11,
+where a simultaneous motion of three ﬁngers has appeared (at
+around 64 sec) when the subject reached the difﬁculty level 3 (ie, after
+scoring the 20 points). It is also seen (in Fig. 11) as the score increased,
+not only the complex ﬁnger combination appeared on the game but
+also the speed of the game increased, thus providing a more challenging environment to the participant. Note that, a therapist can set
+the speed of the game for different score levels, or set up a steady
+speed for all the levels depending on the patient's condition.
+
+Table 2
+Game score of subject 2
+Date
+
+Score
+
+3/22/2019
+3/23/2019
+3/23/2019
+3/23/2029
+3/26/2019
+3/27/2019
+3/28/2019
+3/29/2019
+3/30/2019
+4/1/2019
+
+25
+34
+35
+16
+10
+32
+28
+29
+41
+23
+Fig. 7. Nomenclature for data representation.
+
+8
+
+V. Janarthanan et al. / Journal of Hand Therapy xxx (2020) 1e10
+
+Fig. 8. The experimental result with subject 1 scored 7 on March 24th for ﬁnger extension movement; (A) individual ﬁnger movement plots; (B) results shown in panel (A) are
+plotted in one graph. No simultaneous motion of multiﬁngers can be seen on panel (B) as the subject's score was less than 10.
+
+It is obvious from all the results (Figs. 8, 9, and 11) that for a
+particular ﬁnger motion, a few other ﬁngers also show some
+movements. This is due to the dependence of a ﬁnger motion on
+other ﬁngers. For a stroke patient, this dependence will be much
+more severe. In this rehabilitation scheme, the developed game
+includes some provisions where a therapist can adjust how much
+ﬂexion/extension movements of the dependent ﬁnger should be
+allowed for a particular patient so that the game can go on without
+showing ‘wrong ﬁnger movement’ (an example of this case is presented in Fig. 4C). The therapist also needs to deﬁne the amount of
+ﬂexion/extension angle for the ﬁngers of the patient to consider as
+a successful ﬂexion/extension to lift the bird in the game. In our
+experiments, we have considered a ﬁnger ﬂexion/extension angle
+greater than 60 as a successful movement to play the game, and
+the dependent ﬁnger movement should be less than 50 , otherwise
+the game will end with the message ‘Wrong Finger.’
+Experimental results presented in Figures 8-11 reveal that the
+developed rehab glove system can be effectively used to engage an
+
+individual in playing a computer game (or a mobile phone game)
+that can record the data (ie, game score, ﬁnger ﬂexion/extension
+angle, time spent in a therapeutic session, etc.) and put it in a
+format that could be easily read by a therapist or displayed to the
+therapists/patients in different graph formats.
+Conclusion
+In this article, we presented an engaging rehabilitation method
+for individuals with hand dysfunction. A sensored glove was
+developed to detect ﬁnger ﬂexion/extension motion and was integrated with a computer game named ‘Flappy Bird.’ The game has
+been customized to play with the developed sensored glove. The
+glove wirelessly sends the ﬁnger ﬂexion/extension data to the game.
+In a therapeutic session, an individual plays the game by ﬂexing/
+extending his or her ﬁngers. Based on the user's performance/
+progress (game score determines the performance) the difﬁculty
+level of the game changes intelligently to engage the user with the
+
+Fig. 9. The experimental result with subject 2 scored 16 for the ﬁnger ﬂexion movement. A double ﬁnger combination appeared on the ﬁgure after the subject's score reaches 10.
+
+V. Janarthanan et al. / Journal of Hand Therapy xxx (2020) 1e10
+
+9
+
+Fig. 10. (A) Individual ﬁnger joint angles extracted from Fig. 9; (B) simultaneous ﬂexion motion of two ﬁngers extracted from Fig. 9.
+
+more challenging tasks (where multiﬁnger motions are required to
+play the game). The game can be played either on a computer or on a
+smartphone. Provisions included in the game (a) to set up the time
+limit; (b) customize the difﬁculty level; (c) customize the single and
+multiﬁnger repetitions; (d) slow/speed up the game (to facilitate
+slow or fast ﬂexion/extension of ﬁnger); and (e) reverse the game
+control for poststroke patients with ﬂexure contractures where an
+individual must extend his/her to play the game. To demonstrate the
+proof of concept (as well as to evaluate the performance of the
+developed ‘game-interfaced sensored glove system’), an experiment
+was conducted with the healthy subjects where the users play the
+developed game wearing the sensored glove. In the experiments,
+subjects' ﬁnger joint ﬂexion/extension angle and game scores are
+recorded. Experimental results reveal that the developed rehab
+glove system can be effectively used to engage a patient playing a
+computer game (or a mobile phone game) that can record the data
+(game score, ﬁnger ﬂexion/extension angle, etc.) and put it in a
+format that could be easily read by a therapist or displayed to the
+therapists/patients in different graph formats.
+
+The developed system will enable the therapists to monitor the
+patient's progress through the player's score in the game that is
+recorded in a progressive log. This method of rehabilitation rests on
+the idea that through repetitive task practice and through making
+the patient attempt progressively more complex hand positions,
+they will undergo neuroplasticity at a faster rate and regain dexterity in each individual ﬁnger. In addition, by being able to continue
+the progress and play the game at home, therapeutic sessions are
+not conﬁned to the therapist's ofﬁce. Most importantly, with this
+method of therapeutic approach, patients will avoid potentially
+monotonous tasks and remain engaged in their rehabilitation.
+In future work, a study with actual patients who suffer from a
+motor impairment of the upper limb will be conducted over an
+extended period of time. Experiments using test subjects rather
+than healthy controls will allow for better feedback on the efﬁciency of the glove. In addition, we will expand the software to
+make the glove compatible with a variety of more engaging video
+games. Eventually, incorporating virtual reality games would make
+the treatment process more engaging and potentially even make
+
+Fig. 11. The experimental result with subject 3 scored 27 for ﬁnger ﬂexion movement. Double and triple ﬁnger combination appeared on the ﬁgure after the subject's score
+increases.
+
+10
+
+V. Janarthanan et al. / Journal of Hand Therapy xxx (2020) 1e10
+
+rehabilitation more efﬁcient. As this glove is developed, long-term
+studies will be performed to determine the efﬁciency, successes,
+and drawbacks of this type of repetitive task practice training for
+hand rehabilitation.
+
+CRediT authorship contribution statement
+Vinesh Janarthanan: Investigation, Writing - original draft. Md
+Assad-Uz-Zaman: Writing - original draft, Formal analysis, Investigation. Mohammad Habibur Rahman: Writing - original draft,
+Formal analysis, Investigation. Erin McGonigle: Writing - original
+draft, Formal analysis, Investigation. Inga Wang: Writing - original
+draft, Formal analysis, Investigation.
+
+References
+1. Benjamin EJ, Michael JB, Stephanie EC, et al. Heart disease and stroke statistics2017 update: a report from the American Heart Association. Circulation.
+2017;135(10):e146ee603.
+2. Mackay J, Mensah G. Atlas of Heart Disease and Stroke. Brighton, UK: World
+Health Organization, Nonserial Publication; 2004.
+3. Parker VM, Wade DT, Langton HR. Loss of arm function after stroke: measurement, frequency, and recovery. Int Rehabil Med. 1986;8(2):69e73.
+4. Education USD of. In: USA 1983-1986: From the Digest of Data on Person with
+Disabilities. Washington, DC: US Department of Education, National Institute on
+Disability and Rehabilitation Research; 1992.
+5. Marty J, Porcher B, Autissier R. Hand injuries and occupational accidents. Statistics and prevention. Ann Chir Main. 1983;2(4):368e370.
+6. Jenkins JA. Caregiving costly to family caregivers. Available at: https://
+www.aarp.org/caregiving/ﬁnancial-legal/info-2017/family-caregiving-costlyjj.html; 2018. Accessed November 18, 2019.
+7. Kleim JA, Jones TA. Principles of experience-dependent neural plasticity: implications for rehabilitation after brain damage. J Speech Lang Hear Res.
+2008;51(1):1092e4388.
+8. Wood SR, Murillo N, Bach-y-Rita P, Leder RS, Marks JT, Page SJ. Motivating,
+game-based stroke rehabilitation: a brief report. Top Stroke Rehabil.
+2003;10(2):134e140.
+9. Alankus G, Lazar A, May M, Kelleher C. Towards Customizable Games for Stroke
+Rehabilitation. Proceedings of the SIGCHI Conference on Human Factors in
+Computing Systems, pp. 2113-2122. New York, NY: Association for Computing
+Machinery; 2010.
+
+10. Annett M, Anderson F, Bischof WF. User Perspectives on Tabletop Therapy.
+Proceedings of the 9th International Conference on Disability, Virtual Reality &
+Associated Technologies (Laval, France, 2012). 2012.
+11. Shah N, Amirabdollahian F, Basteris A. Designing Motivational Games for Stroke
+Rehabilitation. Human System Interactions (HSI), 2014 7th International Conference on IEEE. 2014:166e171.
+12. Shah N, Basteris A, Amirabdollahian F. Design parameters in multimodal games
+for rehabilitation. Games Health J. 2014;3:13e20.
+13. Anderson KR, Woodbury ML, Phillips K, et al. Virtual reality video games to
+promote movement recovery in stroke rehabilitation: a guide for clinicians.
+Arch Phys Med Rehabil. 2015;5:973e976.
+14. Hung Y-X, Huang P-C, Chen K-T, Chu W-C. What do stroke patients look for in
+game-based rehabilitation: a survey study. Medicine (Baltimore). 2016;95(11):
+e3032.
+15. Sasidharan S, Smart Glove. An Assistive Device to Enhance Recovery of Hand
+Function During Motor Rehabilitation. In: Master’s thesis. Arizona State University; 2015:62.
+16. Placidi G, Luigi C, Andrea P, Matteo P, Matteo S. A Virtual Glove System for the
+Hand Rehabilitation Based on Two Orthogonal LEAP Motion Controllers. Proceedings of the 6th International Conference on Pattern Recognition Applications and Methods. Portugal: Porto; 2017.
+17. Yap HK, Jeong HL, Fatima N, Chen-Hua Y. Design and preliminary feasibility
+study of a soft robotic glove for hand function assistance in stroke survivors.
+Front Neurosci. 2017;11:547.
+18. Zondervan DK, Nizan F, Enoch C, et al. Home-based hand rehabilitation after
+chronic stroke: randomized, controlled single-blind trial comparing the
+MusicGlove with a conventional exercise program. J Rehabil Res Dev.
+2016;53(4):457e472.
+19. Winstein CJ, Merians AS, Sullivan KJ. Motor learning after unilateral brain
+damage. Neuropsychologia. 1999;37(8):975e987.
+20. Levesque L, et al. Experimental Comfort Assessment of an Active Exoskeleton
+Interface, 2017 IEEE International Symposium on Robotics and Intelligent
+Sensors (IRIS). 2017.
+21. Getting Started with the Arduino Nano, arduino.cc. https://www.arduino.cc/
+en/Guide/ArduinoNano, Accessed 18 November 2019.
+22. Reas, Casey, and Ben Fry. Processing: a programming handbook for visual designers and artists.. Cambridge, MA: Mit Press; 2007.
+23. Nguyen D. Flappy Bird Game; 2013. From: https://www.ign.com/games/ﬂappybird. Accessed November 18, 2019.
+24. Peckham M. No, you don't have to play Flappy bird”. Available at: https://time.com/4034/no-you-dont-have-to-play-ﬂappy-bird/; 2014. Accessed November
+18, 2019.
+25. Petzinger GM, Fisher BE, McEwen S, Beeler JA, Walsh JP, Jakowec MW. Exercise-enhanced neuroplasticity targeting motor and cognitive circuitry in
+Parkinson’s disease. Lancet Neurol. 2013;12(7):716e726.
+26. Barrett N, Swain I, Gatzidis C, Mecheraoui C. The use and effect of video game
+design theory in the creation of game-based systems for upper limb stroke
+rehabilitation. J Rehabil Assist Technol Eng. 2016;3, 2055668316643644.
+
+
