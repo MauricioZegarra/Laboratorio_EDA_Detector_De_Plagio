@@ -1,0 +1,394 @@
+MusicGlove: Motivating and Quantifying Hand Movement
+Rehabilitation by using Functional Grips to Play Music
+Nizan Friedman, Vicky Chan, Danny Zondervan, Mark Bachman, Member, IEEE, and David J.
+Reinkensmeyer, Member, IEEE
+Abstract— People with stroke typically must perform much
+of their hand exercise at home without professional assistance
+as soon as two weeks after the stroke. Without feedback and
+encouragement, individuals often lose motivation to practice
+using the affected hand, and this disuse contributes to further
+declines in hand function. We developed the MusicGlove as a
+way to facilitate and motivate at home practice of hand
+movement. This low-cost device uses music as an interactive
+and motivating medium to guide hand exercise and to
+quantitatively assess hand movement recovery. It requires the
+user to practice functional movements, including pincer grip,
+key-pinch grip, and finger-thumb opposition, by using those
+movements to play different musical notes, played along to
+songs displayed by an interactive computer game. We report
+here the design of the glove and the results of a single-session
+experiment with 10 participants with chronic stroke. We found
+that the glove is well suited for use by people with an
+impairment level quantified by a Box and Blocks score of at
+least around 7; that the glove can be used to obtain a measure
+of hand dexterity (% of notes hit) that correlates strongly with
+the Box and Blocks score; and that the incorporation of music
+into training significantly improved both objective measures of
+hand motor performance and self-ratings of motivation for
+training in the single session.
+I. INTRODUCTION
+Stroke remains the leading cause of chronic adult
+disability in Western countries with over four million
+survivors currently living in the United States [1]. Following
+the onset of stroke, up to 85% of patients exhibit initial hand
+motor impairment for the first few weeks, and up to 75% six
+months post initial assessment [2]-[4]. Intensive movement
+training can reduce motor impairment after stroke [5].
+Unfortunately, the length of stay at inpatient rehabilitation
+facilities is now often limited to two weeks and outpatient
+Manuscript received March 23, 2011. The project described was
+supported by NIH-R01HD062744-01 from NCMRR and Grant Number
+UL1 RR031985 from the National Center for Research Resources (NCRR),
+a component of the National Institutes of Health (NIH) and the NIH
+Roadmap for Medical Research.
+N. Friedman is with the Department of Biomedical Engineering,
+University of California, Irvine, Irvine, CA 92617 USA (e-mail:
+friedman@uci.edu)
+V. Chan is with Rehabilitation Services, University of California at
+Irvine Medical Center, Irvine, CA 92697 USA (e-mail: vchan2@uci.edu).
+M. Bachman is with the department of Electrical and Computer Science
+and the Department of Biomedical Engineering, University of California,
+Irvine, CA 92617 USA (e-mail: mbachman@uci.edu
+D. J. Reinkensmeyer is with the Department of Anatomy and
+Neurobiology, the Department of Mechanical and Aerospace Engineering
+and the Department of Biomedical Engineering, University of California,
+Irvine, CA 92697 USA (e-mail: dreinken@uci.edu)
+physical therapy to two times a week thereafter [6]. Patients
+are therefore expected to perform intensive therapy at home
+with little direct supervision during the time window when
+the brain is most plastic [7]. Current home hand therapy
+typically consists of patients following through written
+sheets of exercises [8]. Without feedback and a motivating
+context for exercise, people often cease exercising the hand.
+Repetitive massed practice of movements and the
+intensity of movement are two of the most important factors
+for regaining motor function [9]-[11]. Music is a promising
+avenue for therapy because of its highly repetitive and
+motivating nature [9], [12]. Moreover, music therapy has
+been hypothesized to induce better cortical connectivity and
+improve motor cortex activation [9], [13]. Recognizing these
+potential benefits, several forms of music based therapy have
+emerged which focus on movement repetition and auditory
+feedback about movement precision [9], [12], [14].
+Corresponding Notes
+Fig. 1 a.) The five hand movements trained using MusicGlove, shown in
+three frames each progressing from beginning to end of the movement.
+When the user touches the thumb lead to one of the other 5 electrical leads,
+a distinct event is sent to the computer through the USB port b.) The
+MusicGlove interfaces with a computer game called FOF. In the game,
+colored notes scroll down the screen on five distinct frets. When the notes
+reach the bottom of the screen, the user must touch one of the five
+respective leads on the glove with their thumb within a 300 ms time frame.
+Hitting the note increases the volume of the music. Correct notes are logged
+and displayed in a summary at the end of the level providing a quantitative
+assessment of hand function.
+978-1-4244-4122-8/11/$26.00 ©2011 IEEE 2359
+33rd Annual International Conference of the IEEE EMBS
+Boston, Massachusetts USA, August 30 - September 3, 2011
+Technology for music-based therapy of hand movement is
+also emerging. For example, one study used a customized
+electronic keyboard and drum pad designed to train both fine
+as well as gross hand movement [9]. In another study,
+participants used a robotic and virtual system to play a
+simulated piano with the intent of training hand function
+[16]. Although these devices promote recovery of hand
+function, they do not specifically train the hand movements
+used in activities of daily living (ADLs).
+Our working hypothesis is that a musical training device
+that focuses on training functional hand movements will be
+more effective than a device that does not train such
+movements, due to the principle of specificity of motor
+training [17]. In other words, we hypothesize that people
+will improve function more if they practice the actual
+movements required for function.
+We therefore developed MusicGlove as a low cost device
+(< $100) for home hand rehabilitation. MusicGlove uses
+music as an interactive and motivating medium for therapy
+and to gain a quantitative assessment of the user’s progress.
+In addition, we designed MusicGlove to require performance
+of functional gripping movements to play musical notes;
+these movements include pincer grip, key-pinch grip, and
+finger-thumb opposition.
+The device presented here is similar to another glove
+based hand therapy device known as the HandTutor [18].
+However, based on the published report of its use, the
+HandTutor does not appear to be focused on using musical
+training for therapy. The HandTutor also focuses on finger
+range of motion exercises rather than on having the user
+complete pinch and grasp functions that are used in many
+ADLs.
+This paper describes the design of the MusicGlove and the
+results of initial single-session testing with the device. In this
+testing, we sought to understand what level of impairment
+the device was suited to treat; whether the quantitative
+measurements from the glove correlated with clinical scales
+of hand function; and whether people found the musical
+context for therapy motivating.
+II. METHODS
+A. Device Design
+MusicGlove is composed of a glove designed to train
+functional hand movements through interactive music-based
+computer games.
+1) Glove
+The glove contains six electrical leads located on all five
+fingertips and one on the proximal interphalangeal joint on
+the lateral aspect of the index finger. When the lead on the
+thumb touches any of the other five leads, an electrical
+connection is closed which is then registered by the
+computer as an event. The placement of the electrical leads
+forces the patient to engage in pinch and grasp motions
+associated with activities of daily living (ADLs), as well as
+thumb-finger opposition [19].
+We have initially designed MusicGlove to be used to play
+music on a pentatonic scale, common in Rock and Blues
+music. Fig. 1a shows the five movements that correspond to
+the five musical notes. It is possible to incorporate more
+notes by combining finger movements or placing more
+leads, or by using sensing of hand orientation to influence
+note selection.
+2) USB-Controller
+A USB-controller was built to interface the glove with a
+computer. A PIC18F14K50 microcontroller sends a unique
+output to the computer corresponding to each of the five
+digital inputs it receives.
+B. Software
+The MusicGlove is interfaced with a modified version of
+Frets on Fire (FOF)—an open source computer game similar
+to Guitar Hero©. During this game, five distinct notes scroll
+from the top to bottom of the screen (Fig 1b). When a note
+touches the stars at the bottom of the screen, the user has a
+300ms window to touch the thumb to the specific electrical
+lead associated with that note. Each note is synchronized
+with a song in order to create the perception of playing the
+song with the glove. The goal of the game is to correctly hit
+as many notes as possible by the end of the level.
+In order to use FOF for hand rehabilitation, several
+modifications were made to the source code. First, the
+graphical user interface and song selection were
+reconfigured towards people over age 50, as this is the
+predominant age range for people with stroke. When
+developing the songs, the difficulty level of each song was
+also configured to match the skill level of individuals with
+different levels of hand impairment. Moreover, the computer
+game was modified to enable both user and therapist to gain
+a quantitative assessment of motor function at the end of
+each song. The MusicGlove quantitative assessment shows:
+the number of correct notes hit on each fret, total number of
+correct notes hit, and an average of how close in time the
+individual was to hitting the note at the correct time.
+Specifically, the timing term is calculated as:
+(1)
+Where X = deviation in time of a correctly hit note (has to be
+within 300ms window to be considered correct), and n = the
+total number of correctly hit notes in a level.
+C. Participants
+A total of 10 participants who had experienced a stroke
+within the past three years were enrolled in the study (mean
+duration past stroke = 41.8 months +/- 15.6 SD). All
+participants had severe to moderate hand impairment as a
+result of stroke (Box & Block Test 0-46; 60 = normal).
+2360
+Participants provided informed consent according to the
+protocol approved by the U.C. Irvine Institutional Review
+Board.
+D. Procedure
+Motor function was first assessed using the Box & Blocks
+test by a trained physical therapist [15]. This assessment,
+which requires the testee to grab, move over a barrier, and
+drop as many blocks as possible in a one minute period, is
+widely used in motor rehabilitation of the upper extremity,
+and has good reliability and validity. Next, each participant
+donned the glove and was instructed how to generate an
+event by correctly touching the thumb to one of the five
+leads. The participant then played a tutorial in FOF that
+explained how to correctly match each of the five events
+with the five notes on the screen. The participants then
+began the training phase. Half of the participants played a
+level associated with the song Can’t Help Falling in Love
+three times with music and then three times without music
+(i.e. with the speaker turned off, but still with the graphical
+interface showing the desired notes). The other group played
+Can’t Help Falling in Love three times without music
+followed by three times with music. The trial was 2 minutes
+59 seconds in duration and contained a total of 82 notes, of
+which 28, 27, 27, 0, 0 of the notes were located on frets 1-5
+respectfully. Participants were given a maximum of one
+minute in between trials. At the end of each trial, the
+MusicGlove quantitative assessment was recorded. After all
+six trials were completed, the participants were asked to fill
+a questionnaire about their experience with the device.
+III. RESULTS
+A. Comparison of MusicGlove quantitative assessment
+with an established clinical measure of hand function
+Fig. 2 Shows the average percent of total notes hit versus the
+Box and Blocks score of each of the 10 participants in the
+study. There was a significant linear relationship between
+MusicGlove performance in FOF and Box and Block score
+(β = 0.51, t(9) = 10.76, p<0.001, r2
+= 0.79). Note that two
+of the 10 participants enrolled in the study could not
+participate in the training phase due to an inability to close
+the contacts between the thumb and other leads. These
+participants had Box and Blocks scores of 0 and 2. A third
+participant with a Box and Blocks score of 7 was able to
+participate in the training phase.
+Fig. 2. Average percent of total notes hit significantly predicts box and
+block score, β = 0.51, t(9) = 10.76, p<0.001, r2
+= 0.79. Error bars
+represent one standard deviation.
+B. Role of music in motor performance and motivation
+Participants attempted to perform the gripping
+movements with and without the musical feedback; in both
+cases they received graphical feedback from the computer
+screen about the desired notes and success in hitting those
+desired notes with the correct timing. Participants scored on
+average 10% higher, in terms of percentage of musical notes
+successfully played, when receiving music feedback (paired
+t-test, t(7) = 2.38, p = 0.048).
+Fig. 3. Participants on average performed 10% better in FOF level with
+music than without (paired t-test, t(7) = 2.38, p = 0.048). The thin lines
+represent the outcome of each participant. The thick line represents the
+average of these results.
+We also evaluated the average note timing term ( ) with
+and without music. As seen in fig. 4, participants on average
+did not show any significant difference in timing when
+playing the levels with and without music (paired t-test, t(7)
+= 0.43, p = 0.435).
+2361
+Fig. 4. Comparison of average note timing with and without music.
+Participants did not show a significant difference in the timing of hit note
+with and without music (paired t-test, t(7) = 0.43, p= 0.435). The thin lines
+represent the outcome of each participant. The thick line represents the
+average of these results.
+Fig. 5 shows the adaptation to playing FOF over the six
+trials. On average, participants improved in total amount of
+hit notes by 19.9% (SD = 18.5) from the first trial to the last.
+A paired t-test revealed a highly significant improvement in
+percent of total notes hit from the first trial to last, t(7) =
+3.94, p<0.001.
+Fig. 5. Percent total notes hit for each trial increases on average over the
+length of the training regimen. The thin lines represent the outcome of each
+participant. The thick line represents the average of these results.
+After the training session, we asked participants to
+complete a survey evaluating their experience (fig. 6). They
+found the training motivating, challenging, and desirable for
+home use. The participants found training with music to be
+significantly more motivating than training without music
+(paired t-test, t(7) = 5.6, p<0.001).
+Fig. 6. MusicGlove questionnaire shows that individuals approve of the
+therapy, and find it motivating. Participants found therapy with music to be
+more motivating than therapy without music (paired t-test, t(7) = 5.6,
+p<0.001). Error bars represent one standard deviation.
+IV. DISCUSSION
+We developed a low-cost device that senses when people
+complete functional grips, including pincer grip, key pinch,
+and thumb-finger opposition. We interfaced the glove to a
+music game that requires the player to try to play notes along
+to songs using the functional grips. We tested the glove in a
+single session test with 10 people with a chronic stroke. The
+findings from this test and their significance are as follows.
+First, we found that the glove is suitable for use by people
+with an impairment level quantified by a Box and Blocks
+score of approximately 7 or above. This means that the glove
+is suitable for people who have a moderate to low level of
+hand impairment. Note that all individuals who were able to
+use the glove to play music were able to don it without
+assistance; thus the glove is suitable for home-use by the
+population who can engage in its training paradigm. We are
+currently working on a robotic version of the glove that
+could assist people with a more severe level of hand
+impairment in using the same musical paradigm to exercise
+[20].
+Second, we found that the glove can be used to obtain a
+measure of hand dexterity (% of notes hit) that correlates
+strongly with the Box and Blocks score. Since Box and
+Block score is an established indicator of hand motor
+function, this strong correlation indicates that MusicGlove
+can provide an objective measure of hand function.
+Moreover, this correlation suggests that improvement in
+MusicGlove performance will in turn lead to improved hand
+function.
+Third, the use of music for training significantly improved
+both objective measures of hand motor performance and
+self-ratings of motivation for training. This finding suggests
+that patients will be both more engaged in the task during
+training and will be motivated to perform the therapy for
+long durations. Note that music improved the ability to hit
+the right note with the right grip, but did not improve timing.
+This result is contrary to previous findings [7]. A larger
+2362
+sample size is needed in order to validate this finding.
+In conclusion, the MusicGlove was shown to be a
+motivating device for repetitive training of functional hand
+grips. Moreover, music was found to significantly increase
+the performance and motivation of the participants.
+Longitudinal clinical trials will be implemented to test
+whether training with the MusicGlove improves hand
+function after stroke.
+ACKNOWLEDGMENT
+Nizan Friedman thanks Justin Rowe for help in designing
+the Frets on Fire interface.
+REFERENCES
+[1] Heart Disease and Stroke Statistics, 2010 Update, American Heart
+Association, Dallas, TX, 2010.
+[2] G. Bard and G. G. Hirschberg, ―Recovery of voluntary motion in
+upper extremity following hemiplegia,‖ Archives of Physical Medicine
+and Rehabilitation, vol. 46, pp. 567-574, July 1965.
+[3] V. M. Parker and D. T. Wade, ―Hewer RL. Loss of arm function after
+stroke: measurement, frequency, and recovery,‖ International
+Rehabilitation Medicine. vol. 8, pp. 69-73, 1986.
+[4] D. T. Wade, R. Langton-Hewer, V. A. Wood, C. E. Skilbeck and H.
+M. Ismail, ―The hemiplegic arm after stroke: measurement and
+recovery,‖ Journal of Neurology, Neurosurgery, and Psychiatry. vol.
+46, pp. 521-524, 1983.
+[5] Cramer S, ―The EXCITE Trial A Major Step Forward for Restorative
+Therapies in Stroke,‖ Stroke vol. 38, pp. 2204-2205, 2007.
+[6] D. Reinkensmeyer, P. Lum, and J. Winters, ―Emerging technologies
+for improving access to movement therapy following neurologic
+injury,‖ Rehabilitation, pp. 1-15, 2002.
+[7] J. Liepert, H. Bauder, W. H. Miltner, E. Taub and C. Weiller,
+―Treatment-induced cortical reorganization after stroke in humans,‖
+Stroke. vol. 31, pp. 1210-1216, 2000.
+[8] G. Kielhofner, ―Conceptual Foundations of Occupational Therapy,‖
+FA Davis Company, Philadelphia, PA, 1997.
+[9] E. Alten Muller, S. Schneider, P. W. Marco-Pallares and T. F. Munte,
+T.F, ―Neural reorganization underlies improvement in stroke induced
+motor dysfunction by music supported therapy,‖ Annals of the New
+York Academy of Sciences. vol. 169, pp. 395-405, 2009.
+[10] A. Sterr, T. Elbert, I. Berthold, S. Kolbel, B. Rochstroh, and E. Taub,
+―Longer versus shorter daily constraint-induced movement therapy of
+chronichemiparesis: An exploratory study,‖ Archives of Physical and
+Medical Rehabilitation. vol. 830, pp. 1374-1377, 2002.
+[11] H. E. Jiping, E. J. Koeneman, R. S. Schultz, H. Huang, J. Wanberg, D.
+E. Herring, T. Sugar. R. Herman and J. B. Koeneman, "Design of a
+robotic upper extremity repetitive therapy device," in Proc. 9th
+International Rehabilitation Robotics Conference. 2005 pp. 95- 98,
+July, 2005.
+[12] S. Schneider, P. W. Schonle, E. Altenmuller and T. F. Munte, ―Using
+musical instruments to improve motor skill recovery following a
+stroke,‖ Journal of Neurology. vol 254, pp. 1339-1346, 2007.
+[13] N. M. Russo, T. G. Nicol, S. G. Zecker, E. A. Hayes and N. Kraus,
+―Auditory training improves neural timing in the human brainstem,‖
+Behavioral Brain Research. vol 156, pp. 95-103, January, 2005.
+[14] M. Bangert and E. Altenmuller, ―Mapping perception to action in
+piano practice: A longitudinal DC-EEG-study,‖ BMC Neuroscience,
+vol. 4, pp. 26-36, 2003.
+[15] V. Mathiowetz, G. Volland, N. Kashman and K. Weber, ―Adult
+Norms for the Box and Block Test of Manual Dexterity,‖ Am J
+Occupational Therapy. vol. 39, pp. 386-391, June, 1985.
+[16] S. V. Adamovich, G. G. Fluet, A. Mathai, Q. Qiu, J. Lewis and A. S.
+Merians, ―Design of a complex virtual reality simulation to train
+finger motion for persons with hemiparesis: a proof of concept study,‖
+J Neuroengineering Rehabilitation. vol. 6 pp. 28, July 2009.
+[17] R. A. Schmidt, ―Motor control and learning: a behavioral emphasis,‖
+Human Kinetics, Champaign, IL, 1998.
+[18] E. Carmeli, S. Peleg, G. Bartur, E. Elbo, and J. Vatine,
+―HandTutor(TM) enhanced hand rehabilitation after stroke - a pilot
+study,‖ Physiotherapy research international: the journal for
+researchers and clinicians in physical therapy. 2010.
+[19] J. House, F. W. Gwathmey and D. K. Lundsgaard, ―Restoration of
+strong grasp and lateral pinch in tetraplegia due to cervical spinal cord
+injury,‖ J Hand Surgery 1. pp. 152–159, 1976.
+[20] E. T. Wolbrecht, D. J. Reinkensmeyer, A. Perez-Gracia, ―Single
+Degree-of-Freedom Exoskeleton Mechanism Design for Finger and
+Thumb Rehabilitation,‖ IEEE ICORR, to be published.

@@ -4,18 +4,18 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-import javax.swing.JFrame;
-import javax.swing.JTextArea;
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 
 public class PlagiarismChecker extends JFrame {
 
-    private JLabek title = new JLabel("Detector de Plagio:");
+    private JLabel title = new JLabel("Detector de Plagio:");
     private JLabel text = new JLabel("Haga click en el botón seleccionar archivo y espere a que se muestre una ventana con los resultados.");
     private ResultChecker result;
-
+    
     private String[] paths;
     private String suspicius;
     private ArrayList<String> BD;
@@ -23,9 +23,11 @@ public class PlagiarismChecker extends JFrame {
     public PlagiarismChecker() {
         // Constructor
         BD = new ArrayList<>();
+        build();
     }
 
     public void readFiles(String[] paths) {
+        int i = 0;
         for (String path : paths) {
             try {
                 // Hace lectura del archivo en formato .txt, .docx y .pdf
@@ -55,13 +57,16 @@ public class PlagiarismChecker extends JFrame {
                 byte[] fileContent = Files.readAllBytes(selectedFile.toPath());
 
                 suspicius = new String(fileContent);
-
-                System.out.println("Archivo '" + filename + "' subido exitosamente.");
-            } catch (IOException e) {
+                result = new ResultChecker();
+                result.newSession(this.paths.length, suspicius, BD);
+                verifyPlagiarism().setVisible(true);
+            } 
+            catch (IOException e) {
                 System.err.println("Error al leer el archivo: " + filename);
                 e.printStackTrace();
             }
-        } else {
+        } 
+        else {
             System.out.println("No se seleccionó ningún archivo.");
         }
 
@@ -74,64 +79,32 @@ public class PlagiarismChecker extends JFrame {
         setLocationRelativeTo(null);
 
         // Crear componentes de la GUI
-        JPanel originalPanel = new JPanel();
-
+        
+        JButton forUpload = new JButton("Subir un archivo");
 
         // Definir el diseño de la GUI
-        setLayout(new GridLayout(3,1));
-
-        add();
-        add(checkPanel);
-        add(resultPanel);
+        setLayout(new BorderLayout());
+        
+        add(this.title, BorderLayout.NORTH);
+        add(this.text, BorderLayout.CENTER);
+        add(forUpload, BorderLayout.SOUTH);
 
         // Agregar el ActionListener para el botón "Detectar Plagio"
-        detectButton.addActionListener(new ActionListener() {
+        forUpload.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                detectPlagiarism();
+                uploadFile();
             }
         });
 
     }
-
-    private void detectPlagiarism() {
-        String originalText = originalTextArea.getText();
-        String textToCheck = checkTextArea.getText();
-
-        // Limpiamos el trie antes de cada detección de plagio
-        root = new TrieNode();
-
-        String[] originalWords = originalText.split("\\s+");
-        for (String word : originalWords) {
-            // Convertimos todas las palabras a minúsculas para ser insensibles a mayúsculas
-            word = word.toLowerCase();
-            root.insert(word);
-        }
-
-        String[] wordsToCheck = textToCheck.split("\\s+");
-        List<String> plagiarizedWords = new ArrayList<>();
-        for (String word : wordsToCheck) {
-            // Convertimos todas las palabras a minúsculas para ser insensibles a mayúsculas
-            word = word.toLowerCase();
-            if (root.search(word)) {
-                plagiarizedWords.add(word);
-            }
-        }
-
-        // Actualizamos el área de resultado con las palabras plagiadas (si las hay)
-        if (!plagiarizedWords.isEmpty()) {
-            StringBuilder resultBuilder = new StringBuilder("Palabras plagiadas:\n");
-            for (String word : plagiarizedWords) {
-                resultBuilder.append(word).append("\n");
-            }
-            resultTextArea.setText(resultBuilder.toString());
-        } else {
-            resultTextArea.setText("No se encontraron palabras plagiadas.");
-        }
+    
+    public JFrame verifyPlagiarism() {
+        return this.result.getResults();
     }
 
     public static void main(String[] args) {
-        String[] paths = { "archivo1.txt", "archivo2.txt" };//Aca colocar direccion de los archivos
+        String[] paths = { "BD/article 1.pdf", "BD/article 2.pdf", "BD/article 3.pdf", "BD/article 4.pdf", "BD/article 5.pdf", "BD/article 6.pdf", "BD/article 7.pdf" };
         PlagiarismChecker checker = new PlagiarismChecker();
 
         checker.readFiles(paths);

@@ -1,35 +1,69 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class ResultChecker {
-    boolean[] result;
-    String[] type;
+    private boolean[] result;
+    private String[] type;
+    private int count;
 
-    public ResultChecker() {
-        //constructor básico
+    public void newSession(int n, String sospechoso, List <String> BD) {
+        result = new boolean[n];
+        type = new String[n];
+        count = 0;
+        for (String original : BD) {
+            compare(sospechoso, original);
+        }
     }
 
-    public ResultChecker(String sospechoso, String[] paths) {
-        //llama a newSession
+    private void compare(String sospechoso, String original) {
+        String originalText = original.toLowerCase();
+        String suspiciousText = sospechoso.toLowerCase();
+
+        // Calcular el índice de similitud de Jaccard entre los documentos
+        double jaccardSimilarity = calculateJaccardSimilarity(originalText, suspiciousText);
+
+        // Mostrar el resultado del análisis en una ventana de diálogo
+        if (jaccardSimilarity < 0.3) {
+            this.type[count] = "nulo";
+            this.result[count] = false;
+        } 
+        else if(jaccardSimilarity < 0.9) {
+            this.type[count] = "parcial";
+            this.result[count] = false;
+        }
+        else {
+            this.type[count] = "total";
+            this.result[count] = false;
+        }
+        
+        count ++;
+    
     }
 
-    private void clean() {
-        //declara como nulos los atributos.
+    private double calculateJaccardSimilarity(String text1, String text2) {
+        Set<String> wordsSet1 = new HashSet<>(Arrays.asList(text1.split("\\W+")));
+        Set<String> wordsSet2 = new HashSet<>(Arrays.asList(text2.split("\\W+")));
+
+        // Calcular el tamaño de la intersección entre los conjuntos de palabras
+        Set<String> intersection = new HashSet<>(wordsSet1);
+        intersection.retainAll(wordsSet2);
+
+        // Calcular el tamaño de la unión entre los conjuntos de palabras
+        Set<String> union = new HashSet<>(wordsSet1);
+        union.addAll(wordsSet2);
+
+        // Calcular el índice de similitud de Jaccard
+        double jaccardSimilarity = (double) intersection.size() / union.size();
+        return jaccardSimilarity;
     }
 
-    public void newSession(String sospechoso, String[] paths) {
-        //llama a clean
-        //crea los objetos, result y type debe tener la misma longitud que paths
-        //hará tantas pasadas como la longitud de path y en cada pasada llamaa compare y además declara true o false en result y el tipo segun el método compare.
-    }
-
-    private String compare(String sospechoso, String original) {
-        //hace la comparación y devuelve nulo, parcial o total.
-    }
-
-    public JPanel getResults() {
+    public JFrame getResults() {
         //ventana con los resultados de la última comparación.
-        JPanel panel = new JPanel();
+        JFrame panel = new JFrame();
 
         // Comprobar si hay resultados para mostrar
         if (result == null || type == null || result.length == 0 || type.length == 0 || result.length != type.length) {
