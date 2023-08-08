@@ -1,0 +1,183 @@
+MusicGlove: Motivating and Quantifying Hand Movement
+Rehabilitation by using Functional Grips to Play Music
+Nizan Friedman, Vicky Chan, Danny Zondervan, Mark Bachman, Member, IEEE, and David J.
+Reinkensmeyer, Member, IEEE
+Abstract— People with stroke typically must perform much
+of their hand exercise at home without professional assistance
+as soon as two weeks after the stroke. Without feedback and
+encouragement, individuals often lose motivation to practice
+using the affected hand, and this disuse contributes to further
+declines in hand function. We developed the MusicGlove as a
+way to facilitate and motivate at home practice of hand
+movement. This low-cost device uses music as an interactive
+and motivating medium to guide hand exercise and to
+quantitatively assess hand movement recovery. It requires the
+user to practice functional movements, including pincer grip,
+key-pinch grip, and finger-thumb opposition, by using those
+movements to play different musical notes, played along to
+songs displayed by an interactive computer game. We report
+here the design of the glove and the results of a single-session
+experiment with 10 participants with chronic stroke. We found
+that the glove is well suited for use by people with an
+impairment level quantified by a Box and Blocks score of at
+least around 7; that the glove can be used to obtain a measure
+of hand dexterity (% of notes hit) that correlates strongly with
+the Box and Blocks score; and that the incorporation of music
+into training significantly improved both objective measures of
+hand motor performance and self-ratings of motivation for
+training in the single session.
+I. INTRODUCTION
+Stroke remains the leading cause of chronic adult
+disability in Western countries with over four million
+survivors currently living in the United States [1]. Following
+the onset of stroke, up to 85% of patients exhibit initial hand
+motor impairment for the first few weeks, and up to 75% six
+months post initial assessment [2]-[4]. Intensive movement
+training can reduce motor impairment after stroke [5].
+Unfortunately, the length of stay at inpatient rehabilitation
+facilities is now often limited to two weeks and outpatient
+Manuscript received March 23, 2011. The project described was
+supported by NIH-R01HD062744-01 from NCMRR and Grant Number
+UL1 RR031985 from the National Center for Research Resources (NCRR),
+a component of the National Institutes of Health (NIH) and the NIH
+Roadmap for Medical Research.
+N. Friedman is with the Department of Biomedical Engineering,
+University of California, Irvine, Irvine, CA 92617 USA (e-mail:
+friedman@uci.edu)
+V. Chan is with Rehabilitation Services, University of California at
+Irvine Medical Center, Irvine, CA 92697 USA (e-mail: vchan2@uci.edu).
+M. Bachman is with the department of Electrical and Computer Science
+and the Department of Biomedical Engineering, University of California,
+Irvine, CA 92617 USA (e-mail: mbachman@uci.edu
+D. J. Reinkensmeyer is with the Department of Anatomy and
+Neurobiology, the Department of Mechanical and Aerospace Engineering
+and the Department of Biomedical Engineering, University of California,
+Irvine, CA 92697 USA (e-mail: dreinken@uci.edu)
+physical therapy to two times a week thereafter [6]. Patients
+are therefore expected to perform intensive therapy at home
+with little direct supervision during the time window when
+the brain is most plastic [7]. Current home hand therapy
+typically consists of patients following through written
+sheets of exercises [8]. Without feedback and a motivating
+context for exercise, people often cease exercising the hand.
+Repetitive massed practice of movements and the
+intensity of movement are two of the most important factors
+for regaining motor function [9]-[11]. Music is a promising
+avenue for therapy because of its highly repetitive and
+motivating nature [9], [12]. Moreover, music therapy has
+been hypothesized to induce better cortical connectivity and
+improve motor cortex activation [9], [13]. Recognizing these
+potential benefits, several forms of music based therapy have
+emerged which focus on movement repetition and auditory
+feedback about movement precision [9], [12], [14].
+Corresponding Notes
+Fig. 1 a.) The five hand movements trained using MusicGlove, shown in
+three frames each progressing from beginning to end of the movement.
+When the user touches the thumb lead to one of the other 5 electrical leads,
+a distinct event is sent to the computer through the USB port b.) The
+MusicGlove interfaces with a computer game called FOF. In the game,
+colored notes scroll down the screen on five distinct frets. When the notes
+reach the bottom of the screen, the user must touch one of the five
+respective leads on the glove with their thumb within a 300 ms time frame.
+Hitting the note increases the volume of the music. Correct notes are logged
+and displayed in a summary at the end of the level providing a quantitative
+assessment of hand function.
+978-1-4244-4122-8/11/$26.00 ©2011 IEEE 2359
+33rd Annual International Conference of the IEEE EMBS
+Boston, Massachusetts USA, August 30 - September 3, 2011
+Technology for music-based therapy of hand movement is
+also emerging. For example, one study used a customized
+electronic keyboard and drum pad designed to train both fine
+as well as gross hand movement [9]. In another study,
+participants used a robotic and virtual system to play a
+simulated piano with the intent of training hand function
+[16]. Although these devices promote recovery of hand
+function, they do not specifically train the hand movements
+used in activities of daily living (ADLs).
+Our working hypothesis is that a musical training device
+that focuses on training functional hand movements will be
+more effective than a device that does not train such
+movements, due to the principle of specificity of motor
+training [17]. In other words, we hypothesize that people
+will improve function more if they practice the actual
+movements required for function.
+We therefore developed MusicGlove as a low cost device
+(< $100) for home hand rehabilitation. MusicGlove uses
+music as an interactive and motivating medium for therapy
+and to gain a quantitative assessment of the user’s progress.
+In addition, we designed MusicGlove to require performance
+of functional gripping movements to play musical notes;
+these movements include pincer grip, key-pinch grip, and
+finger-thumb opposition.
+The device presented here is similar to another glove
+based hand therapy device known as the HandTutor [18].
+However, based on the published report of its use, the
+HandTutor does not appear to be focused on using musical
+training for therapy. The HandTutor also focuses on finger
+range of motion exercises rather than on having the user
+complete pinch and grasp functions that are used in many
+ADLs.
+This paper describes the design of the MusicGlove and the
+results of initial single-session testing with the device. In this
+testing, we sought to understand what level of impairment
+the device was suited to treat; whether the quantitative
+measurements from the glove correlated with clinical scales
+of hand function; and whether people found the musical
+context for therapy motivating.
+II. METHODS
+A. Device Design
+MusicGlove is composed of a glove designed to train
+functional hand movements through interactive music-based
+computer games.
+1) Glove
+The glove contains six electrical leads located on all five
+fingertips and one on the proximal interphalangeal joint on
+the lateral aspect of the index finger. When the lead on the
+thumb touches any of the other five leads, an electrical
+connection is closed which is then registered by the
+computer as an event. The placement of the electrical leads
+forces the patient to engage in pinch and grasp motions
+associated with activities of daily living (ADLs), as well as
+thumb-finger opposition [19].
+We have initially designed MusicGlove to be used to play
+music on a pentatonic scale, common in Rock and Blues
+music. Fig. 1a shows the five movements that correspond to
+the five musical notes. It is possible to incorporate more
+notes by combining finger movements or placing more
+leads, or by using sensing of hand orientation to influence
+note selection.
+2) USB-Controller
+A USB-controller was built to interface the glove with a
+computer. A PIC18F14K50 microcontroller sends a unique
+output to the computer corresponding to each of the five
+digital inputs it receives.
+B. Software
+The MusicGlove is interfaced with a modified version of
+Frets on Fire (FOF)—an open source computer game similar
+to Guitar Hero©. During this game, five distinct notes scroll
+from the top to bottom of the screen (Fig 1b). When a note
+touches the stars at the bottom of the screen, the user has a
+300ms window to touch the thumb to the specific electrical
+lead associated with that note. Each note is synchronized
+with a song in order to create the perception of playing the
+song with the glove. The goal of the game is to correctly hit
+as many notes as possible by the end of the level.
+In order to use FOF for hand rehabilitation, several
+modifications were made to the source code. First, the
+graphical user interface and song selection were
+reconfigured towards people over age 50, as this is the
+predominant age range for people with stroke. When
+developing the songs, the difficulty level of each song was
+also configured to match the skill level of individuals with
+different levels of hand impairment. Moreover, the computer
+game was modified to enable both user and therapist to gain
+a quantitative assessment of motor function at the end of
+each song. The MusicGlove quantitative assessment shows:
+the number of correct notes hit on each fret, total number of
+correct notes hit, and an average of how close in time the
+individual was to hitting the note at the correct time.
+Specifically, the timing term is calculated as:
+(1)
+Where X = deviation in time of a correctly hit note (has to be
+within 300ms window to be considered correct), and n = the
+total number of correctly hit notes in a level.

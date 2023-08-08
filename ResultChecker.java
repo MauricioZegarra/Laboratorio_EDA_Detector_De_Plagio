@@ -28,7 +28,7 @@ public class ResultChecker implements design {
 
         double jaccardSimilarity = calculateJaccardSimilarity(originalText, suspiciousText);
 
-        if (jaccardSimilarity < 0.2) {
+        if (jaccardSimilarity < 0.009) {
             this.type[count] = "Nulo";
             this.result[count] = false;
         } else if (jaccardSimilarity < 0.9) {

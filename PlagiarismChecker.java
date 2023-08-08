@@ -26,6 +26,7 @@ public class PlagiarismChecker extends JFrame {
     public PlagiarismChecker() {
         database = new ArrayList<>();
         build();
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     public void readFiles(String[] paths) {
@@ -132,7 +133,7 @@ public class PlagiarismChecker extends JFrame {
     }
 
     public static String[] getBD() {
-        String folderPath = "./plagio/BD/.";
+        String folderPath = "BD/";
         File folder = new File(folderPath);
         File[] fileList = folder.listFiles();
 
