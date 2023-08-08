@@ -56,42 +56,23 @@ public class ResultChecker implements design {
         return jaccardSimilarity;
     }
 
-    public JFrame getResults() {
-        JFrame panel = new JFrame("Resultados de Plagio");
-        panel.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        panel.setSize(500, 400);
-        panel.setLocationRelativeTo(null);
-
+    public DefaultTableModel getResults() {
         if (result == null || type == null || result.length == 0 || type.length == 0 || result.length != type.length) {
-            JLabel noResultsLabel = new JLabel("No hay resultados para mostrar.");
-            noResultsLabel.setHorizontalAlignment(SwingConstants.CENTER);
-            noResultsLabel.setFont(tableFont);
-            panel.add(noResultsLabel);
-            return panel;
+            Object[][] noResultsData = { { "No hay resultados para mostrar.", "", "" } };
+            String[] columnNames = { "Mensaje", "", "" };
+            return new DefaultTableModel(noResultsData, columnNames);
+        } else {
+            Object[][] tableData = new Object[result.length][3];
+
+            for (int i = 0; i < result.length; i++) {
+                tableData[i][0] = i + 1; // Index
+                tableData[i][1] = result[i] ? "Sí" : "No";
+                tableData[i][2] = type[i];
+            }
+
+            String[] columnNames = { "Índice", "Plagio", "Tipo" };
+            return new DefaultTableModel(tableData, columnNames);
         }
-
-        Object[][] tableData = new Object[result.length][3];
-
-        for (int i = 0; i < result.length; i++) {
-            tableData[i][0] = i + 1; // Index
-            tableData[i][1] = result[i] ? "Sí" : "No";
-            tableData[i][2] = type[i];
-        }
-
-        String[] columnNames = { "Índice", "Plagio", "Tipo" };
-
-        DefaultTableModel tableModel = new DefaultTableModel(tableData, columnNames);
-
-        JTable table = new JTable(tableModel);
-        table.getTableHeader().setFont(tableFont);
-        table.setFont(tableFont);
-        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-
-        JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setPreferredSize(new Dimension(480, 320));
-
-        panel.add(scrollPane);
-
-        return panel;
     }
+
 }
