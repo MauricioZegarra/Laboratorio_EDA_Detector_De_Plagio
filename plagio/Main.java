@@ -41,41 +41,41 @@ public class Main {
                     running = false;
                     break;
                 default:
-                    System.out.println("Opción no válida. Intenta nuevamente.");
+                    System.out.println("Opcion no valida. Intenta nuevamente.");
             }
         }
     }
 
     private static void showMenu() {
-        System.out.println("\n--- Menú ---");
+        System.out.println("\n--- Menu ---");
         System.out.println("1. Detectar plagio.");
-        System.out.println("2. Agregar nuevo párrafo original.");
+        System.out.println("2. Agregar nuevo parrafo original.");
         System.out.println("3. Ver textos.");
         System.out.println("4. Salir.");
-        System.out.print("Elige una opción: ");
+        System.out.print("Elige una opcion: ");
     }
 
     private static void detectPlagio() {
-        System.out.println("\nIntroduce el párrafo sospechoso:");
+        System.out.println("\nIntroduce el parrafo sospechoso:");
         String suspiciousText = scanner.nextLine();
 
         boolean isPlagiarized = detector.detectPlagio(suspiciousText);
-        System.out.println(isPlagiarized ? "Plagio detectado." : "No se detectó plagio.");
+        System.out.println(isPlagiarized ? "Plagio detectado." : "No se detecto plagio.");
     }
 
     private static void addNewOriginalText() {
-        System.out.println("\nIntroduce el nuevo párrafo original:");
+        System.out.println("\nIntroduce el nuevo parrafo original:");
         String originalText = scanner.nextLine();
 
-        System.out.println("Introduce un nombre para el archivo (sin extensión):");
+        System.out.println("Introduce un nombre para el archivo (sin extension):");
         String fileName = scanner.nextLine();
         
         try {
             FileManager.writeToFile("archivos/" + fileName + ".txt", originalText);
             detector.addTextToTrie(originalText);
-            System.out.println("Párrafo original guardado exitosamente.");
+            System.out.println("Parrafo original guardado exitosamente.");
         } catch (IOException e) {
-            System.out.println("Error al guardar el párrafo: " + e.getMessage());
+            System.out.println("Error al guardar el parrafo: " + e.getMessage());
         }
     }
 
@@ -86,7 +86,7 @@ public class Main {
             for (int i = 0; i < files.size(); i++) {
                 System.out.println((i + 1) + ". " + files.get(i));
             }
-            System.out.println("Elige un archivo para ver su contenido (por número):");
+            System.out.println("Elige un archivo para ver su contenido (por numero):");
 
             int fileChoice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
@@ -96,7 +96,7 @@ public class Main {
                 System.out.println("\nContenido del archivo:");
                 System.out.println(content);
             } else {
-                System.out.println("Selección no válida.");
+                System.out.println("Seleccion no valida.");
             }
         } catch (IOException e) {
             System.out.println("Error al listar o leer los archivos: " + e.getMessage());

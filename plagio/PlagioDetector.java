@@ -17,11 +17,11 @@ public class PlagioDetector {
     }
 
     private List<String> tokenize(String text) {
-        // Estoes una simplificación. En un caso real, podrías considerar un tokenizador más robusto.
+       
         String[] tokens = text.split("\\s+");
         return new ArrayList<>(Arrays.asList(tokens));
     }
-
+    /* 
     private List<String> generateAllSubsequences(List<String> tokens) {
         List<String> subsequences = new ArrayList<>();
         for (int i = 0; i < tokens.size(); i++) {
@@ -29,6 +29,19 @@ public class PlagioDetector {
             for (int j = i; j < tokens.size(); j++) {
                 subseq.append(tokens.get(j)).append(" ");
                 subsequences.add(subseq.toString().trim());
+            }
+        }
+        return subsequences;
+    }*/
+    private List<String> generateAllSubsequences(List<String> tokens) {
+        List<String> subsequences = new ArrayList<>();
+        for (int i = 0; i < tokens.size(); i++) {
+            StringBuilder subseq = new StringBuilder();
+            for (int j = i; j < tokens.size(); j++) {
+                subseq.append(tokens.get(j)).append(" ");
+                if (j - i + 1 >= 5) {  // Condicion para que la subsecuencia tenga al menos 5 palabras
+                    subsequences.add(subseq.toString().trim());
+                }
             }
         }
         return subsequences;
