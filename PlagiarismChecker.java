@@ -1,42 +1,37 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-
-public class PlagiarismChecker extends JFrame {
+public class PlagiarismChecker extends JFrame implements design {
 
     private JLabel title = new JLabel("Detector de Plagio:");
-    private JLabel text = new JLabel("Haga click en el botón seleccionar archivo y espere a que se muestre una ventana con los resultados.");
+    private JLabel text = new JLabel(
+            "Haga clic en el botón 'Seleccionar Archivo' y espere a que se muestren los resultados.");
     private ResultChecker result;
-    
+
     private String[] paths;
-    private String suspicius;
-    private ArrayList<String> BD;
+    private String suspicious;
+    private ArrayList<String> database;
 
     public PlagiarismChecker() {
         // Constructor
-        BD = new ArrayList<>();
+        database = new ArrayList<>();
         build();
     }
 
     public void readFiles(String[] paths) {
         this.paths = paths;
-        int i = 0;
         for (String path : paths) {
             try {
                 byte[] fileContent = Files.readAllBytes(Paths.get(path));
-
-                // Convierte el contenido del archivo a una cadena
                 String content = new String(fileContent);
-                BD.add(content);
-
+                database.add(content);
             } catch (IOException e) {
                 System.err.println("Error al leer el archivo: " + path);
                 e.printStackTrace();
@@ -45,7 +40,6 @@ public class PlagiarismChecker extends JFrame {
     }
 
     public void uploadFile() {
-        // Permite subir un archivo del ordenador y lo almacena en suspicius
         JFileChooser fileChooser = new JFileChooser();
         int returnValue = fileChooser.showOpenDialog(null);
 
@@ -56,20 +50,17 @@ public class PlagiarismChecker extends JFrame {
             try {
                 byte[] fileContent = Files.readAllBytes(selectedFile.toPath());
 
-                suspicius = new String(fileContent);
+                suspicious = new String(fileContent);
                 result = new ResultChecker();
-                result.newSession(this.paths.length, suspicius, BD);
+                result.newSession(this.paths.length, suspicious, database);
                 verifyPlagiarism().setVisible(true);
-            } 
-            catch (IOException e) {
+            } catch (IOException e) {
                 System.err.println("Error al leer el archivo: " + filename);
                 e.printStackTrace();
             }
-        } 
-        else {
+        } else {
             System.out.println("No se seleccionó ningún archivo.");
         }
-
     }
 
     private void build() {
@@ -78,33 +69,31 @@ public class PlagiarismChecker extends JFrame {
         setSize(500, 400);
         setLocationRelativeTo(null);
 
-        // Crear componentes de la GUI
-        
-        JButton forUpload = new JButton("Subir un archivo");
+        JButton forUpload = new JButton("Seleccionar Archivo");
+        forUpload.setFont(buttonFont);
+        forUpload.setBackground(buttonColor);
 
-        // Definir el diseño de la GUI
         setLayout(new GridLayout(3, 1));
-        
+
         add(this.title);
         add(this.text);
         add(forUpload);
 
-        // Agregar el ActionListener para el botón "Detectar Plagio"
         forUpload.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 uploadFile();
             }
         });
-
     }
-    
+
     public JFrame verifyPlagiarism() {
         return this.result.getResults();
     }
 
     public static void main(String[] args) {
-        String[] paths = { "BD/article 1.pdf", "BD/article 2.pdf", "BD/article 3.pdf", "BD/article 4.pdf", "BD/article 5.pdf", "BD/article 6.pdf", "BD/article 7.pdf" };
+        String[] paths = { "BD/article 1.pdf", "BD/article 2.pdf", "BD/article 3.pdf", "BD/article 4.pdf",
+                "BD/article 5.pdf", "BD/article 6.pdf", "BD/article 7.pdf" };
         PlagiarismChecker checker = new PlagiarismChecker();
 
         checker.readFiles(paths);

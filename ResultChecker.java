@@ -1,102 +1,97 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class ResultChecker {
+public class ResultChecker implements design {
+
     private boolean[] result;
     private String[] type;
     private int count;
 
-    public void newSession(int n, String sospechoso, List <String> BD) {
+    public void newSession(int n, String suspicious, List<String> database) {
         result = new boolean[n];
         type = new String[n];
         count = 0;
-        for (String original : BD) {
-            compare(sospechoso, original);
+        for (String original : database) {
+            compare(suspicious, original);
         }
     }
 
-    private void compare(String sospechoso, String original) {
+    private void compare(String suspicious, String original) {
         String originalText = original.toLowerCase();
-        String suspiciousText = sospechoso.toLowerCase();
+        String suspiciousText = suspicious.toLowerCase();
 
-        // Calcular el índice de similitud de Jaccard entre los documentos
         double jaccardSimilarity = calculateJaccardSimilarity(originalText, suspiciousText);
 
-        // Mostrar el resultado del análisis en una ventana de diálogo
         if (jaccardSimilarity < 0.2) {
-            this.type[count] = "nulo";
+            this.type[count] = "Nulo";
             this.result[count] = false;
-        } 
-        else if(jaccardSimilarity < 0.9) {
-            this.type[count] = "parcial";
+        } else if (jaccardSimilarity < 0.9) {
+            this.type[count] = "Parcial";
+            this.result[count] = true;
+        } else {
+            this.type[count] = "Total";
             this.result[count] = true;
         }
-        else {
-            this.type[count] = "total";
-            this.result[count] = true;
-        }
-        
-        count ++;
-    
+
+        count++;
     }
 
     private double calculateJaccardSimilarity(String text1, String text2) {
         Set<String> wordsSet1 = new HashSet<>(Arrays.asList(text1.split("\\W+")));
         Set<String> wordsSet2 = new HashSet<>(Arrays.asList(text2.split("\\W+")));
 
-        // Calcular el tamaño de la intersección entre los conjuntos de palabras
         Set<String> intersection = new HashSet<>(wordsSet1);
         intersection.retainAll(wordsSet2);
 
-        // Calcular el tamaño de la unión entre los conjuntos de palabras
         Set<String> union = new HashSet<>(wordsSet1);
         union.addAll(wordsSet2);
 
-        // Calcular el índice de similitud de Jaccard
         double jaccardSimilarity = (double) intersection.size() / union.size();
         return jaccardSimilarity;
     }
 
     public JFrame getResults() {
-        //ventana con los resultados de la última comparación.
-        JFrame panel = new JFrame();
+        JFrame panel = new JFrame("Resultados de Plagio");
+        panel.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        panel.setSize(500, 400);
+        panel.setLocationRelativeTo(null);
 
-        // Comprobar si hay resultados para mostrar
         if (result == null || type == null || result.length == 0 || type.length == 0 || result.length != type.length) {
-            JLabel noResultsLabel = new JLabel("No hay resultados por mostar.");
+            JLabel noResultsLabel = new JLabel("No hay resultados para mostrar.");
+            noResultsLabel.setHorizontalAlignment(SwingConstants.CENTER);
+            noResultsLabel.setFont(tableFont);
             panel.add(noResultsLabel);
             return panel;
         }
 
-         // Crear una matriz para almacenar los datos de la tabla
-         Object[][] tableData = new Object[result.length][2];
+        Object[][] tableData = new Object[result.length][3];
 
-         // Llenar la matriz con los datos de los arreglos result y type
-         for (int i = 0; i < result.length; i++) {
-             tableData[i][0] = result[i];
-             tableData[i][1] = type[i];
-         }
- 
-         // Etiquetas para las columnas de la tabla
-         String[] columnNames = {"Result", "Type"};
- 
-         // Crear el modelo de tabla con los datos y etiquetas de columna
-         DefaultTableModel tableModel = new DefaultTableModel(tableData, columnNames);
- 
-         // Crear la tabla con el modelo
-         JTable table = new JTable(tableModel);
- 
-         // Agregar la tabla a un JScrollPane para que sea desplazable si tiene muchos datos
-         JScrollPane scrollPane = new JScrollPane(table);
- 
-         // Agregar el JScrollPane al panel
-         panel.add(scrollPane);
- 
-         return panel;
+        for (int i = 0; i < result.length; i++) {
+            tableData[i][0] = i + 1; // Index
+            tableData[i][1] = result[i] ? "Sí" : "No";
+            tableData[i][2] = type[i];
+        }
 
+        String[] columnNames = { "Índice", "Plagio", "Tipo" };
+
+        DefaultTableModel tableModel = new DefaultTableModel(tableData, columnNames);
+
+        JTable table = new JTable(tableModel);
+        table.getTableHeader().setFont(tableFont);
+        table.setFont(tableFont);
+        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        JScrollPane scrollPane = new JScrollPane(table);
+        scrollPane.setPreferredSize(new Dimension(480, 320));
+
+        panel.add(scrollPane);
+
+        return panel;
     }
 }
