@@ -8,28 +8,18 @@ public class Trie {
     public void insert(String word) {
         TrieNode node = root;
         for (char ch : word.toCharArray()) {
-            if (Character.isLetter(ch)) { // Verificar si el carácter es una letra
-                char lowerCaseCh = Character.toLowerCase(ch);
-                if (!node.contains(lowerCaseCh)) {
-                    node.put(lowerCaseCh, new TrieNode());
-                }
-                node = node.get(lowerCaseCh);
-            }
+            node.children.putIfAbsent(ch, new TrieNode());
+            node = node.children.get(ch);
         }
-        node.setEndOfWord(true);
+        node.endOfWord = true;
     }
 
     public boolean search(String word) {
         TrieNode node = root;
         for (char ch : word.toCharArray()) {
-            if (Character.isLetter(ch)) { // Verificar si el carácter es una letra
-                char lowerCaseCh = Character.toLowerCase(ch);
-                if (!node.contains(lowerCaseCh)) {
-                    return false;
-                }
-                node = node.get(lowerCaseCh);
-            }
+            node = node.children.get(ch);
+            if (node == null) return false;
         }
-        return node.isEndOfWord();
+        return node.endOfWord;
     }
 }
