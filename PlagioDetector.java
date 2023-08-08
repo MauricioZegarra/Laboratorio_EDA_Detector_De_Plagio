@@ -17,6 +17,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 
 public class PlagioDetector extends JFrame {
 
@@ -117,15 +120,36 @@ public class PlagioDetector extends JFrame {
                     
                     suspicius = new String(fileContent);
                     
-                    JOptionPane.showConfirmDialog(null,"Archivo subido exitosamente.");
+                    JOptionPane.showMessageDialog(null,"Archivo subido exitosamente.");
                     
                     verifyPlagiarism();
                 }
                 catch (IOException io) {
-                    JOptionPane.showConfirmDialog(null,"Error al leer el archivo");
+                    JOptionPane.showMessageDialog(null,"Error al leer el archivo");
                 }
             } else {
                 System.out.println("No se seleccionó ningún archivo.");
+            }
+        });
+
+        toBD.addActionListener((ActionEvent a) -> {
+            JFileChooser fileChooser = new JFileChooser();
+            int returnValue = fileChooser.showOpenDialog(null);
+    
+            if (returnValue == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = fileChooser.getSelectedFile();
+
+                String targetFolderPath = "BD/";
+
+                try {
+                    Path targetPath = Path.of(targetFolderPath, selectedFile.getName());
+
+                    Files.copy(selectedFile.toPath(), targetPath, StandardCopyOption.REPLACE_EXISTING);
+
+                    JOptionPane.showMessageDialog(null, "Archivo copiado y almacenado exitosamente en la base de datos.");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -141,13 +165,20 @@ public class PlagioDetector extends JFrame {
     public ResultChecker verifyPlagiarism() throws IOException {
         
         ResultChecker result = new ResultChecker(FileManager.readAllFilesFromDirectory("BD/").size());
+
+        File folder = new File("BD/");
+
+        File[] files = folder.listFiles();
         
         int i = 0;
         
         for(String original : FileManager.readAllFilesFromDirectory("BD/")) {
             this.trie = new Trie();
             this.addTextToTrie(original);
-            result.setResult(i, this.detectPlagio(suspicius));
+            
+            String nombre = files[i].getName();
+
+            result.setResult(i, nombre, this.detectPlagio(suspicius));
             i++;
         }
         

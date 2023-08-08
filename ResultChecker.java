@@ -7,13 +7,16 @@ import javax.swing.table.DefaultTableModel;
 public class ResultChecker extends JFrame {
 
     private final boolean[] result;
+    private String[] nombres;
     
     public ResultChecker(int n) {
         this.result = new boolean[n];
+        this.nombres = new String[n];
         build();
     }
     
-    public void setResult(int i, boolean result) {
+    public void setResult(int i, String nombre, boolean result) {
+        this.nombres[i] = nombre;
         this.result[i] = result;
     }
 
@@ -23,7 +26,7 @@ public class ResultChecker extends JFrame {
         this.setSize(400,400);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         
         // Comprobar si hay resultados para mostrar
         if (result == null || result.length == 0) {
@@ -34,15 +37,16 @@ public class ResultChecker extends JFrame {
         }
 
         // Crear una matriz para almacenar los datos de la tabla
-        Object[][] tableData = new Object[result.length][1];
+        Object[][] tableData = new Object[result.length][2];
 
         // Llenar la matriz con los datos de los arreglos result y type
         for (int i = 0; i < result.length; i++) {
-            tableData[i][0] = result[i];
+            tableData[i][0] = nombres[i];
+            tableData[i][1] = result[i];
         }
 
         // Etiquetas para las columnas de la tabla
-        String[] columnNames = {"Result", "Type"};
+        String[] columnNames = {"Nombre", "Result"};
 
         // Crear el modelo de tabla con los datos y etiquetas de columna
         DefaultTableModel tableModel = new DefaultTableModel(tableData, columnNames);
@@ -55,6 +59,7 @@ public class ResultChecker extends JFrame {
 
         // Agregar el JScrollPane al panel
         this.add(scrollPane);
+
         this.setVisible(true);
         
         return true;
