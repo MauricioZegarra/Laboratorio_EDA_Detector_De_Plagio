@@ -1,3 +1,4 @@
+package fallido;
 public class Trie {
     
     private TrieNode root;

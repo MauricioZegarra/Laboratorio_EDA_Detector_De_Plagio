@@ -1,3 +1,4 @@
+package fallido;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
