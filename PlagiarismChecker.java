@@ -12,9 +12,8 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlagiarismChecker extends JFrame implements design {
+public class PlagiarismChecker extends JFrame {
 
-    private JLabel title = new JLabel("Detector de Plagio:");
     private ResultChecker result;
     private List<File> selectedFiles = new ArrayList<>();
     private final String BD_FOLDER_PATH = "./plagio/BD/.";
@@ -73,13 +72,6 @@ public class PlagiarismChecker extends JFrame implements design {
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        JTextArea inputTextArea = new JTextArea(10, 35);
-        JLabel inputLabel = new JLabel("Ingresar texto:");
-        JPanel leftPanel = new JPanel(new BorderLayout());
-        leftPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 10));
-        leftPanel.add(inputLabel, BorderLayout.NORTH);
-        leftPanel.add(new JScrollPane(inputTextArea), BorderLayout.CENTER);
-
         JPanel docButtonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
         JButton loadFromDBButton = new JButton("Cargar Base de Datos");
         JButton loadToCheckButton = new JButton("Cargar Documento");
@@ -104,13 +96,7 @@ public class PlagiarismChecker extends JFrame implements design {
         docPanel.add(resultScrollPane, BorderLayout.CENTER);
         rightPanel.add(docPanel, BorderLayout.CENTER);
 
-        JButton checkButton = new JButton("Comprobar plagio");
-        JPanel bottomPanel = new JPanel();
-        bottomPanel.add(checkButton);
-
-        mainPanel.add(leftPanel, BorderLayout.WEST);
         mainPanel.add(rightPanel, BorderLayout.CENTER);
-        mainPanel.add(bottomPanel, BorderLayout.SOUTH);
 
         loadFromDBButton.addActionListener(new ActionListener() {
             @Override
