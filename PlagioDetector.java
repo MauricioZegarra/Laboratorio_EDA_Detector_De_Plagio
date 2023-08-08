@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class PlagioDetector extends JFrame{
+public class PlagioDetector extends JFrame {
     private final Trie trie;
     private final EmptyBorder border = new EmptyBorder(10, 10, 10, 10);
 
@@ -21,6 +21,7 @@ public class PlagioDetector extends JFrame{
         this.trie = new Trie();
         build();
     }
+
     public PlagioDetector(String originalText) {
         trie = new Trie();
         List<String> subsequences = generateAllSubsequences(tokenize(originalText));
@@ -30,7 +31,8 @@ public class PlagioDetector extends JFrame{
     }
 
     private List<String> tokenize(String text) {
-        // Esto es una simplificación. En un caso real, podrías considerar un tokenizador más robusto.
+        // Esto es una simplificación. En un caso real, podrías considerar un
+        // tokenizador más robusto.
         String[] tokens = text.split("\\s+");
         return new ArrayList<>(Arrays.asList(tokens));
     }
@@ -56,37 +58,38 @@ public class PlagioDetector extends JFrame{
         }
         return false;
     }
+
     public void addTextToTrie(String text) {
         List<String> subsequences = generateAllSubsequences(tokenize(text));
         for (String subseq : subsequences) {
             trie.insert(subseq);
         }
     }
-    
+
     private void build() {
-        this.setLayout(new FlowLayout (FlowLayout.CENTER));
-        
-        JPanel content = new JPanel(new GridLayout(3,1));
-        
+        this.setLayout(new FlowLayout(FlowLayout.CENTER));
+
+        JPanel content = new JPanel(new GridLayout(3, 1));
+
         JLabel title = new JLabel("Detector de Plagio");
-        
+
         title.setFont(new Font("Verdana", Font.BOLD, 15));
-        
+
         JButton analyze = new JButton("Subir archivo");
         JButton toBD = new JButton("Subir archivos a la BD");
-        
+
         title.setBorder(border);
         content.add(title);
         content.add(analyze);
         content.add(toBD);
-        
+
         this.add(content);
-        
+
         setTitle("APP");
         setSize(300, 240);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        
+
         setResizable(false);
         setVisible(true);
 
@@ -99,7 +102,8 @@ public class PlagioDetector extends JFrame{
     }
 
     private void close() {
-        int confirmation = JOptionPane.showConfirmDialog(this, "¿Está seguro de querer cerrar la aplicación?", "Advertencia",
+        int confirmation = JOptionPane.showConfirmDialog(this, "¿Está seguro de querer cerrar la aplicación?",
+                "Advertencia",
                 JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
         if (confirmation == JOptionPane.YES_OPTION) {
             System.exit(0);
